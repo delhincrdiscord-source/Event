@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Delhi NCR Gameverse 2026 | Delhi NCR Discord Community Festival",
+  description = "A month of community events, gaming nights, giveaways, voice activities and unforgettable moments with the Delhi NCR Discord Community (discord.gg/delhi)."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Delhi NCR Discord, Gameverse 2026, Delhi Gaming Community, Discord Community Festival, Gaming Nights Delhi NCR, discord.gg/delhi, Community Events Delhi" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://discord.gg/delhi" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body class="bg-[#09090b] text-gray-100 antialiased selection:bg-[#5865f2] selection:text-white min-h-screen flex flex-col font-sans">
+    <slot />
+  </body>
+</html>

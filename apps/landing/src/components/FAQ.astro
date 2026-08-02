@@ -1,0 +1,60 @@
+---
+const faqs = [
+  {
+    q: "Is Delhi NCR Gameverse an esports tournament platform?",
+    a: "No! Delhi NCR Gameverse is a month-long Discord community festival hosted by the Delhi NCR Discord Server (discord.gg/delhi). It is focused on community gaming nights, voice hangouts, movie watch parties, creative contests, and giveaways rather than high-stakes pro tournaments."
+  },
+  {
+    q: "Do I need to pay any entry fee to participate?",
+    a: "No! All events, custom lobbies, movie screenings, giveaways, and voice lounges are 100% free of charge for all members of the community."
+  },
+  {
+    q: "Do I need to live in Delhi to join?",
+    a: "Not at all! Anyone from anywhere in India or across the globe can participate. All festival activities, gaming nights, movie sessions, and giveaways are hosted 100% online on our Discord server (discord.gg/delhi)."
+  },
+  {
+    q: "How do I participate in custom gaming nights (Valorant, BGMI, Among Us)?",
+    a: "Simply join the Discord server at discord.gg/delhi, head over to the #gameverse-events channel, and react to the event post or hop directly into the active voice channel at event start time!"
+  },
+  {
+    q: "How do community giveaways work?",
+    a: "Giveaways for Discord Nitro, Steam gift cards, and custom server roles take place during weekend voice hangouts and event milestones. Active participation in community events gives you entry passes."
+  }
+];
+---
+
+<section id="faq" class="py-24 bg-[#09090b] border-b border-white/10 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Title -->
+    <div class="text-center mb-16 space-y-3">
+      <span class="text-xs font-mono-code text-[#5865F2] uppercase tracking-widest bg-[#5865F2]/10 border border-[#5865F2]/30 px-3 py-1 rounded-full">
+        COMMUNITY HELP
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+        Frequently Asked Questions.
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-base">
+        Everything you need to know about the festival, voice channels, and how to get involved.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="glass-card rounded-2xl border border-white/10 p-6 group transition-all [&_summary::-webkit-details-marker]:none">
+          <summary class="flex items-center justify-between cursor-pointer text-base font-bold text-white group-hover:text-[#5865F2] transition-colors">
+            <span>{faq.q}</span>
+            <span class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 ml-4 group-open:rotate-180 transition-transform">
+              <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 leading-relaxed font-normal">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

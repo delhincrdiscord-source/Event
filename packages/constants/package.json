@@ -1,0 +1,21 @@
+{
+  "name": "@gameverse/constants",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./roles": "./src/roles.ts",
+    "./permissions": "./src/permissions.ts",
+    "./config": "./src/config.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo dist"
+  },
+  "devDependencies": {
+    "@gameverse/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}

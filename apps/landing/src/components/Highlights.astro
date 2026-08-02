@@ -1,0 +1,147 @@
+---
+const highlights = [
+  {
+    title: "Gaming Nights",
+    category: "Casual Fun",
+    icon: "🎮",
+    description: "Relaxed evening sessions with community members. Jump into voice channels and play whatever the squad is feeling.",
+    color: "border-[#5865F2]/40"
+  },
+  {
+    title: "Voice Activities",
+    category: "Hangouts",
+    icon: "🎙️",
+    description: "Late night talks, storytelling, podcast hangouts, and icebreaker sessions in dedicated server lounges.",
+    color: "border-[#7928ca]/40"
+  },
+  {
+    title: "Community Challenges",
+    category: "Quests",
+    icon: "🏆",
+    description: "Fun mini-challenges, riddles, clip-of-the-week contests, and leaderboard quests for exclusive server roles.",
+    color: "border-[#50e3c2]/40"
+  },
+  {
+    title: "Giveaways & Nitro",
+    category: "Perks",
+    icon: "🎁",
+    description: "Discord Nitro subscriptions, game keys, Steam gift cards, and custom server vanity perks for participants.",
+    color: "border-[#ff0080]/40"
+  },
+  {
+    title: "Movie & Anime Nights",
+    category: "Watch Parties",
+    icon: "🍿",
+    description: "Weekend movie streams, anime marathons, and esports watch parties hosted on high-quality Discord screenshares.",
+    color: "border-[#3b82f6]/40"
+  },
+  {
+    title: "Creative & Art Contests",
+    category: "Showcase",
+    icon: "🎨",
+    description: "Show off your digital art, fanart, photography, game clips, and setup setups to win community recognition.",
+    color: "border-amber-400/40"
+  },
+  {
+    title: "Special Guest Sessions",
+    category: "Interactions",
+    icon: "✨",
+    description: "Q&A sessions with popular local creators, casters, and community leaders sharing stories and advice.",
+    color: "border-purple-400/40"
+  },
+  {
+    title: "Minecraft SMP World",
+    category: "Survival",
+    icon: "🧱",
+    description: "Build together on the official Delhi NCR Minecraft Survival Server. Custom builds, town halls, and mini-games.",
+    color: "border-emerald-400/40"
+  },
+  {
+    title: "Valorant Custom Lobbies",
+    category: "Custom Games",
+    icon: "🎯",
+    description: "Fun 5v5 custom lobbies — Swiftplay, Escalation, Hide & Seek, and friendly inter-channel scrims.",
+    color: "border-rose-400/40"
+  },
+  {
+    title: "BGMI Custom Rooms",
+    category: "Mobile Fun",
+    icon: "📱",
+    description: "Custom Erangel & Livik rooms with wacky rules (Pan only, Snipers only, Vehicle races) for all mobile players.",
+    color: "border-teal-400/40"
+  },
+  {
+    title: "Chess & Strategy Nights",
+    category: "Board Games",
+    icon: "♟️",
+    description: "Blitz chess tournaments, Skribbl.io sessions, and Gartic Phone fun for strategic minds.",
+    color: "border-indigo-400/40"
+  },
+  {
+    title: "Among Us & Party Games",
+    category: "Party",
+    icon: "🚀",
+    description: "Deception and chaos! Late-night Among Us lobbies, Fall Guys parties, and Jackbox games.",
+    color: "border-cyan-400/40"
+  },
+  {
+    title: "Music & Jam Sessions",
+    category: "Audio",
+    icon: "🎵",
+    description: "Open mic nights, beatboxing, guitar jams, and listening parties with local NCR music creators.",
+    color: "border-pink-400/40"
+  }
+];
+---
+
+<section id="highlights" class="py-24 bg-[#09090b] border-b border-white/10 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Title -->
+    <div class="text-center mb-16 space-y-3">
+      <span class="text-xs font-mono-code text-[#5865F2] uppercase tracking-widest bg-[#5865F2]/10 border border-[#5865F2]/30 px-3 py-1 rounded-full">
+        COMMUNITY ACTIVITIES
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+        Festival Highlights.
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-base">
+        Something happening every single day throughout October. Pick your favorite events or join them all!
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {highlights.map((item) => (
+        <div class={`glass-card rounded-2xl p-6 border ${item.color} flex flex-col justify-between group hover:scale-[1.02] transition-all duration-300`}>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
+              <span class="text-[10px] font-mono-code text-gray-400 uppercase tracking-wider bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                {item.category}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#5865F2] transition-colors">
+              {item.title}
+            </h3>
+
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono-code text-gray-400">
+            <span>Hosted on Discord</span>
+            <a href="https://discord.gg/delhi" target="_blank" class="text-[#5865F2] hover:underline font-semibold flex items-center gap-1">
+              Join Channel →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

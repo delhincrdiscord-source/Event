@@ -1,0 +1,73 @@
+---
+const steps = [
+  {
+    step: "01",
+    title: "Register",
+    description: "Fill out the quick 1-minute festival pass form with your Discord username and basic details.",
+    icon: "📝"
+  },
+  {
+    step: "02",
+    title: "Verification",
+    description: "Join the official Delhi NCR Discord Server (discord.gg/delhi) to verify your community role.",
+    icon: "🛡️"
+  },
+  {
+    step: "03",
+    title: "Confirmation",
+    description: "Receive your Digital Festival Pass & unlock access to event calendar channels and role badges.",
+    icon: "🎟️"
+  },
+  {
+    step: "04",
+    title: "Join Events",
+    description: "Jump into daily voice lounges, game nights, giveaways, and movie watch parties all October long!",
+    icon: "🎉"
+  }
+];
+---
+
+<section id="process" class="py-24 bg-[#09090b] border-b border-white/10 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Title -->
+    <div class="text-center mb-16 space-y-3">
+      <span class="text-xs font-mono-code text-[#50e3c2] uppercase tracking-widest bg-[#50e3c2]/10 border border-[#50e3c2]/30 px-3 py-1 rounded-full">
+        HOW TO PARTICIPATE
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+        Registration Process.
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-base">
+        Four simple steps to get your festival pass and start participating in daily events.
+      </p>
+    </div>
+
+    <!-- Steps Flow Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      {steps.map((item, idx) => (
+        <div class="glass-card rounded-2xl p-6 border border-white/10 relative group hover:border-[#5865F2]/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-extrabold text-[#5865F2] font-mono-code">{item.step}</span>
+              <span class="text-2xl">{item.icon}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#50e3c2] transition-colors">
+              {item.title}
+            </h3>
+
+            <p class="text-xs text-gray-400 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono-code text-gray-500">
+            Step {idx + 1} of 4
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

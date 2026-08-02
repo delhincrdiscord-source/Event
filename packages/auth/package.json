@@ -1,0 +1,26 @@
+{
+  "name": "@gameverse/auth",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./server": "./src/server.ts",
+    "./client": "./src/client.ts",
+    "./discord": "./src/discord.ts",
+    "./logger": "./src/logger.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo dist"
+  },
+  "dependencies": {
+    "@gameverse/database": "workspace:*",
+    "better-auth": "^1.0.0"
+  },
+  "devDependencies": {
+    "@gameverse/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}

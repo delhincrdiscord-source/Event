@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Countdown from '../components/Countdown.astro';
+import About from '../components/About.astro';
+import Highlights from '../components/Highlights.astro';
+import Timeline from '../components/Timeline.astro';
+import Process from '../components/Process.astro';
+import FAQ from '../components/FAQ.astro';
+import DiscordCTA from '../components/DiscordCTA.astro';
+import RegisterCTA from '../components/RegisterCTA.astro';
+import TicketModal from '../components/TicketModal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Delhi NCR Gameverse 2026 | Delhi NCR Discord Community Festival"
+  description="A month of community events, gaming nights, giveaways, voice activities and unforgettable moments with the Delhi NCR Discord Community (discord.gg/delhi)."
+>
+  <!-- 1. Sticky Navigation -->
+  <Header />
+
+  <!-- Main Content -->
+  <main>
+    <!-- 2. Hero Section -->
+    <Hero />
+
+    <!-- 3. Festival Countdown -->
+    <Countdown />
+
+    <!-- 4. About Festival -->
+    <About />
+
+    <!-- 5. Festival Highlights -->
+    <Highlights />
+
+    <!-- 6. Event Calendar -->
+    <Timeline />
+
+    <!-- 7. Registration Process -->
+    <Process />
+
+    <!-- 8. FAQ -->
+    <FAQ />
+
+    <!-- 9. Discord CTA -->
+    <DiscordCTA />
+
+    <!-- 10. Register CTA -->
+    <RegisterCTA />
+  </main>
+
+  <!-- 11. Footer -->
+  <Footer />
+
+  <!-- Interactive Registration Modal -->
+  <TicketModal />
+</Layout>

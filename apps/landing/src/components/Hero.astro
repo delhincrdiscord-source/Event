@@ -1,0 +1,102 @@
+---
+---
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#09090b] pt-16 pb-24 border-b border-white/10">
+  
+  <!-- Hero Background Animated GIF Layer -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <img 
+      src="/hero-background.gif" 
+      alt="Delhi NCR Gameverse Animated Background" 
+      class="w-full h-full object-cover object-center scale-105 opacity-85 mix-blend-screen"
+    />
+    <!-- Light Vignette Overlay to let the background glow up -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-[#09090b]/50"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_40%,transparent_30%,#09090b_90%)]"></div>
+  </div>
+
+  <!-- Ambient Light Orbs for Intense Background Glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-gradient-to-tr from-[#5865F2]/45 via-[#7928ca]/35 to-[#50e3c2]/30 blur-[120px] pointer-events-none rounded-full z-0"></div>
+  <div class="absolute top-1/3 right-10 w-96 h-96 bg-[#5865F2]/25 blur-[100px] pointer-events-none rounded-full z-0"></div>
+  <div class="absolute top-1/3 left-10 w-96 h-96 bg-[#7928ca]/25 blur-[100px] pointer-events-none rounded-full z-0"></div>
+
+  <!-- Content Container -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    
+    <!-- Hero Animated Logo Badge -->
+    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.06] border border-white/20 text-xs font-mono-code text-gray-200 mb-8 backdrop-blur-xl hover:border-[#5865F2]/60 transition-colors shadow-2xl">
+      <div class="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-[#5865F2]">
+        <img src="/logo.gif" alt="Logo" class="w-full h-full object-cover" />
+      </div>
+      <span class="text-white font-semibold">100% ONLINE • DISCORD COMMUNITY FESTIVAL</span>
+      <span class="text-gray-500">•</span>
+      <span class="text-[#50e3c2] font-semibold">OCTOBER 1 - 31, 2026</span>
+    </div>
+
+    <!-- Clean Crisp White Headline without Text Glow -->
+    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-[1.05] heading-display">
+      Delhi NCR Gameverse 2026.
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-lg sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed font-normal drop-shadow-md">
+      A month of community events, gaming nights, giveaways, voice activities and unforgettable moments with the Delhi NCR Discord Community.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <a 
+        href="https://discord.gg/delhi" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold text-base shadow-xl shadow-[#5865F2]/30 hover:scale-[1.02] transition-all duration-300 active:scale-95 flex items-center justify-center gap-3"
+      >
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 127.14 96.36">
+          <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,0,106,106,0,0,0,22.8,8.07,108.38,108.38,0,0,0,2.15,73A105.81,105.81,0,0,0,34.2,89.17A77.7,77.7,0,0,0,40.75,78.5a69.83,69.83,0,0,1-11-5.26c.92-.67,1.83-1.37,2.71-2.09a74,74,0,0,0,62.24,0c.89.72,1.79,1.42,2.71,2.09a70,70,0,0,1-11,5.27,77.84,77.84,0,0,0,6.55,10.66,105.62,105.62,0,0,0,32.06-16.17A108.29,108.29,0,0,0,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5.07-12.72,11.45-12.72c6.43,0,11.58,5.77,11.45,12.72C53.9,60,48.78,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5.07-12.72,11.44-12.72C91.12,40.28,96.28,46,96.14,53,96.14,60,91.06,65.69,84.69,65.69Z"/>
+        </svg>
+        <span>Join Discord Server</span>
+      </a>
+
+      <button 
+        onclick="document.getElementById('ticket-modal').classList.remove('hidden')"
+        class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-semibold text-base hover:bg-gray-200 transition-all duration-300 shadow-xl shadow-white/10 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+      >
+        <span>Register Free Pass</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+
+    <!-- Floating Activity Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-4 text-left">
+      <div class="glass-card rounded-2xl p-5 border border-white/10 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#5865F2]/20 text-[#5865F2] flex items-center justify-center shrink-0 text-xl font-bold">
+          🎮
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm">Community Game Nights</h3>
+          <p class="text-xs text-gray-400">Casual Valorant, BGMI, Among Us & Minecraft.</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-white/10 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#7928ca]/20 text-[#7928ca] flex items-center justify-center shrink-0 text-xl font-bold">
+          🎙️
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm">Active Voice Hangouts</h3>
+          <p class="text-xs text-gray-400">Music sessions, movie screenings & late night chats.</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-white/10 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#50e3c2]/20 text-[#50e3c2] flex items-center justify-center shrink-0 text-xl font-bold">
+          🎁
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm">Giveaways & Contests</h3>
+          <p class="text-xs text-gray-400">Nitro drops, steam keys & creative challenges.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

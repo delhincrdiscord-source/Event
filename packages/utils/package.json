@@ -1,0 +1,26 @@
+{
+  "name": "@gameverse/utils",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./format": "./src/format.ts",
+    "./slug": "./src/slug.ts",
+    "./crypto": "./src/crypto.ts",
+    "./redis-pubsub": "./src/redis-pubsub.ts",
+    "./logger": "./src/logger.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo dist"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.34.0"
+  },
+  "devDependencies": {
+    "@gameverse/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}

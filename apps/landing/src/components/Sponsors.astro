@@ -1,0 +1,42 @@
+---
+const sponsors = [
+  { name: "ASUS ROG", role: "Official Gaming PC & Display Partner", tier: "TITLE SPONSOR", logo: "ROG" },
+  { name: "RED BULL", role: "Official Energy Drink Partner", tier: "GLOBAL PARTNER", logo: "RED BULL" },
+  { name: "NVIDIA GEFORCE", role: "Official GPU & Reflex Technology", tier: "PREMIER SPONSOR", logo: "NVIDIA" },
+  { name: "ZOWIE BENQ", role: "Official 240Hz Esports Monitor", tier: "HARDWARE PARTNER", logo: "ZOWIE" },
+  { name: "HYPERX", role: "Official Peripherals & Headset Partner", tier: "HARDWARE PARTNER", logo: "HYPERX" },
+  { name: "DISCORD", role: "Official Community & Voice Platform", tier: "PLATFORM PARTNER", logo: "DISCORD" }
+];
+---
+
+<section id="sponsors" class="py-24 bg-[#07070a] border-b border-white/10 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <!-- Title -->
+    <div class="mb-14 space-y-3">
+      <span class="text-xs font-mono-code text-[#00dfd8] uppercase tracking-widest bg-[#00dfd8]/10 border border-[#00dfd8]/30 px-3 py-1 rounded-full">
+        POWERED BY LEADERS
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+        Official Festival Partners.
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-base">
+        Backing the Delhi NCR esports community with world-class gaming hardware, tournament infrastructure, and prizes.
+      </p>
+    </div>
+
+    <!-- Sponsor Grid Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {sponsors.map((item) => (
+        <div class="aurora-card rounded-2xl p-6 border border-white/10 flex flex-col items-center justify-center group hover:border-[#50e3c2]/40 transition-all cursor-pointer">
+          <div class="w-16 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center font-mono-code font-bold text-gray-200 group-hover:text-[#50e3c2] group-hover:scale-110 transition-all text-xs tracking-wider">
+            {item.logo}
+          </div>
+          <span class="text-xs font-bold text-white mt-3 block">{item.name}</span>
+          <span class="text-[10px] font-mono-code text-gray-400 mt-1 block">{item.role}</span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

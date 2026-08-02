@@ -1,0 +1,72 @@
+---
+---
+<section class="py-12 bg-[#09090b] border-b border-white/10 relative z-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-card rounded-3xl p-8 lg:p-10 border border-white/10 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+      
+      <!-- Left Info -->
+      <div class="text-center lg:text-left space-y-2 max-w-xl">
+        <div class="inline-flex items-center gap-2 text-xs font-mono-code text-[#5865F2] uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-[#5865F2] animate-ping"></span>
+          FESTIVAL DATES
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight heading-section">
+          Starts October 1 — Ends October 31, 2026.
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-400">
+          A full month of daily community hangouts, game nights, and voice lounge activities.
+        </p>
+      </div>
+
+      <!-- Real-time Countdown Box -->
+      <div id="countdown-timer" class="grid grid-cols-4 gap-3 sm:gap-4 font-mono-code text-center w-full lg:w-auto">
+        <div class="bg-white/[0.04] border border-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-md">
+          <span id="days" class="block text-3xl sm:text-4xl font-extrabold text-white text-gradient-blurple">00</span>
+          <span class="text-[11px] text-gray-400 uppercase tracking-widest mt-1 block">Days</span>
+        </div>
+        <div class="bg-white/[0.04] border border-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-md">
+          <span id="hours" class="block text-3xl sm:text-4xl font-extrabold text-white text-gradient-blurple">00</span>
+          <span class="text-[11px] text-gray-400 uppercase tracking-widest mt-1 block">Hours</span>
+        </div>
+        <div class="bg-white/[0.04] border border-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-md">
+          <span id="minutes" class="block text-3xl sm:text-4xl font-extrabold text-white text-gradient-blurple">00</span>
+          <span class="text-[11px] text-gray-400 uppercase tracking-widest mt-1 block">Mins</span>
+        </div>
+        <div class="bg-white/[0.04] border border-[#5865F2]/40 p-4 sm:p-5 rounded-2xl backdrop-blur-md">
+          <span id="seconds" class="block text-3xl sm:text-4xl font-extrabold text-[#5865F2]">00</span>
+          <span class="text-[11px] text-[#5865F2] uppercase tracking-widest mt-1 block font-semibold">Secs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function updateCountdown() {
+    const targetDate = new Date('2026-10-01T00:00:00+05:30').getTime();
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('days')!.innerText = '00';
+      document.getElementById('hours')!.innerText = '00';
+      document.getElementById('minutes')!.innerText = '00';
+      document.getElementById('seconds')!.innerText = '00';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days')!.innerText = String(days).padStart(2, '0');
+    document.getElementById('hours')!.innerText = String(hours).padStart(2, '0');
+    document.getElementById('minutes')!.innerText = String(minutes).padStart(2, '0');
+    document.getElementById('seconds')!.innerText = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>

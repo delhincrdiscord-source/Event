@@ -1,0 +1,180 @@
+---
+const games = [
+  {
+    id: "valorant",
+    title: "Valorant Masters Delhi",
+    category: "PC Esports",
+    prize: "₹6,50,000",
+    format: "5v5 Competitive Tactical Shooter",
+    entry: "Free Entry",
+    color: "from-rose-500/20 to-red-600/20",
+    borderColor: "hover:border-rose-500/50",
+    badgeColor: "bg-rose-500/10 text-rose-400 border-rose-500/30",
+    description: "The flagship PC tactical shooter tournament of North India. 128 team brackets culminating in CyberHub 240Hz LAN Finals."
+  },
+  {
+    id: "cs2",
+    title: "Counter-Strike 2 Major",
+    category: "PC Esports",
+    prize: "₹5,00,000",
+    format: "5v5 Competitive MR12",
+    entry: "Free Entry",
+    color: "from-amber-500/20 to-orange-600/20",
+    borderColor: "hover:border-amber-500/50",
+    badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+    description: "Sub-tick perfection on official FACEIT server nodes. Bring your 5-man squad for MR12 double elimination brackets."
+  },
+  {
+    id: "bgmi",
+    title: "BGMI Battlezone NCR",
+    category: "Mobile Esports",
+    prize: "₹4,50,000",
+    format: "Squad Erangel / Miramar",
+    entry: "Free Entry",
+    color: "from-emerald-500/20 to-teal-600/20",
+    borderColor: "hover:border-emerald-500/50",
+    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+    description: "Mobile esports showdown with 512 squad registrations. Official anti-cheat device checks at the Pragati Maidan Finals."
+  },
+  {
+    id: "tekken8",
+    title: "Tekken 8 Iron Fist Delhi",
+    category: "Fighter & Console",
+    prize: "₹3,00,000",
+    format: "1v1 Double Elimination (PS5)",
+    entry: "Free Entry",
+    color: "from-purple-500/20 to-violet-600/20",
+    borderColor: "hover:border-purple-500/50",
+    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
+    description: "Next-gen fighting arena on PS5 hardware. Low latency monitor stations with custom fightstick setup support."
+  },
+  {
+    id: "eafc26",
+    title: "EA FC 26 Kickoff Cup",
+    category: "Console & Sports",
+    prize: "₹2,00,000",
+    format: "1v1 Ultimate Team / Kickoff",
+    entry: "Free Entry",
+    color: "from-blue-500/20 to-cyan-600/20",
+    borderColor: "hover:border-blue-500/50",
+    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+    description: "Test your tactical controller skills on 65-inch 4K OLED screens in our casual and pro bracket divisions."
+  },
+  {
+    id: "simracing",
+    title: "NCR Apex Sim Racing",
+    category: "Racing & Simulator",
+    prize: "₹1,50,000",
+    format: "Hotlap Qualifiers + Grid Race",
+    entry: "Free Entry",
+    color: "from-cyan-500/20 to-blue-600/20",
+    borderColor: "hover:border-cyan-500/50",
+    badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
+    description: "Direct-drive Fanatec motion rigs setup at CyberHub. Fastest lap times qualify for the Sunday 20-car grid final."
+  },
+  {
+    id: "cosplay",
+    title: "Cosplay Championship 2026",
+    category: "Creator & Culture",
+    prize: "₹1,50,000",
+    format: "Solo & Group Craftsmanship",
+    entry: "Free Entry",
+    color: "from-pink-500/20 to-rose-600/20",
+    borderColor: "hover:border-pink-500/50",
+    badgeColor: "bg-pink-500/10 text-pink-400 border-pink-500/30",
+    description: "Showcase your armor, props, and performance. Judged by international cosplay legends on the main mainstage."
+  },
+  {
+    id: "rocketleague",
+    title: "Rocket League 3v3 Clash",
+    category: "PC Esports",
+    prize: "₹1,00,000",
+    format: "3v3 Soccar Arena",
+    entry: "Free Entry",
+    color: "from-indigo-500/20 to-purple-600/20",
+    borderColor: "hover:border-indigo-500/50",
+    badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
+    description: "High-flying aerial soccar madness. 64 teams battling in single elimination brackets with live caster commentary."
+  }
+];
+---
+
+<section id="games" class="py-24 bg-[#07070a] border-b border-white/10 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="space-y-3">
+        <span class="text-xs font-mono-code text-[#50e3c2] uppercase tracking-widest bg-[#50e3c2]/10 border border-[#50e3c2]/30 px-3 py-1 rounded-full">
+          ESPORTS ARENA
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+          Featured Game Titles.
+        </h2>
+        <p class="text-gray-400 max-w-xl text-base">
+          Competitions across PC, Console, Mobile, Sim Racing, and Creative Arts. Choose your main and claim your glory.
+        </p>
+      </div>
+
+      <!-- Quick Filter Buttons -->
+      <div class="flex flex-wrap gap-2 text-xs font-mono-code">
+        <span class="px-3 py-1.5 rounded-full bg-white text-black font-semibold cursor-pointer">All Arenas</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white cursor-pointer transition-colors">PC Esports</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white cursor-pointer transition-colors">Console & PS5</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white cursor-pointer transition-colors">Mobile Esports</span>
+      </div>
+    </div>
+
+    <!-- Game Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {games.map((game) => (
+        <div class={`aurora-card rounded-2xl p-6 border border-white/10 transition-all duration-300 ${game.borderColor} flex flex-col justify-between group relative overflow-hidden`}>
+          <!-- Top Gradient Accent Glow -->
+          <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${game.color}`}></div>
+          
+          <div>
+            <!-- Header Badge & Category -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class={`text-[11px] font-mono-code font-semibold px-2.5 py-0.5 rounded-full border ${game.badgeColor}`}>
+                {game.category}
+              </span>
+              <span class="text-xs font-mono-code text-gray-400">{game.entry}</span>
+            </div>
+
+            <!-- Title & Prize -->
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#50e3c2] transition-colors flex items-center justify-between">
+              <span>{game.title}</span>
+            </h3>
+            
+            <div class="bg-white/[0.03] border border-white/10 rounded-xl p-3 mb-4 flex items-center justify-between">
+              <span class="text-xs font-mono-code text-gray-400">Prize Pool</span>
+              <span class="text-lg font-extrabold text-white text-gradient-cyan">{game.prize}</span>
+            </div>
+
+            <!-- Description & Format -->
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">
+              {game.description}
+            </p>
+          </div>
+
+          <!-- Bottom Card Action -->
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono-code text-gray-400 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              {game.format}
+            </span>
+            <button 
+              onclick="document.getElementById('ticket-modal').classList.remove('hidden')"
+              class="text-xs font-semibold text-white group-hover:text-[#50e3c2] flex items-center gap-1 transition-colors cursor-pointer"
+            >
+              <span>Register</span>
+              <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

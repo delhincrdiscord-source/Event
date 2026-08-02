@@ -1,0 +1,79 @@
+# ====================================================
+# Delhi NCR Gameverse 2026 — Docker Compose
+# ====================================================
+# Usage:
+#   docker compose up -d            Start all services
+#   docker compose logs -f          Follow logs
+#   docker compose down             Stop all services
+# ====================================================
+
+services:
+  # ── PostgreSQL ────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: gameverse
+      POSTGRES_USER: gameverse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gameverse_secret}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gameverse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Dashboard (Next.js) ──────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: apps/dashboard/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ── Discord Bot ───────────────────────────────────
+  bot:
+    build:
+      context: .
+      dockerfile: apps/bot/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ── Landing (Nginx) ──────────────────────────────
+  landing:
+    build:
+      context: .
+      dockerfile: apps/landing/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "4321:80"
+
+  # ── Nginx Reverse Proxy ──────────────────────────
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/nginx/production.conf:/etc/nginx/nginx.conf:ro
+      - ./deploy/nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - dashboard
+      - landing
+
+volumes:
+  postgres_data:

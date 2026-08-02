@@ -1,0 +1,13 @@
+{
+  "extends": "@gameverse/tsconfig/astro.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@gameverse/types/*": ["../../packages/types/src/*"],
+      "@gameverse/constants/*": ["../../packages/constants/src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

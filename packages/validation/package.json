@@ -1,0 +1,23 @@
+{
+  "name": "@gameverse/validation",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./user": "./src/user.ts",
+    "./event": "./src/event.ts",
+    "./auth": "./src/auth.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo dist"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@gameverse/tsconfig": "workspace:*",
+    "typescript": "^5.8.0"
+  }
+}

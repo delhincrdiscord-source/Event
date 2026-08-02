@@ -1,0 +1,118 @@
+---
+const passTiers = [
+  {
+    name: "Casual Visitor Pass",
+    badge: "FREE ENTRY",
+    price: "₹0",
+    period: "Entire Month",
+    featured: false,
+    color: "border-white/10",
+    features: [
+      "Access to spectator arena & expo floor",
+      "Participate in daily casual gaming setups",
+      "Access to Cosplay Runway show",
+      "Discord Community verification badge"
+    ],
+    buttonText: "Claim Free Pass"
+  },
+  {
+    name: "Competitor Tournament Pass",
+    badge: "MOST POPULAR",
+    price: "₹0",
+    period: "Per Team / Squad",
+    featured: true,
+    color: "border-[#7928ca]/50 bg-gradient-to-b from-[#19102b] to-[#07070a]",
+    features: [
+      "Guaranteed bracket entry in 12 esports titles",
+      "Official tournament anti-cheat verification",
+      "CyberHub 240Hz ZOWIE LAN Finals eligibility",
+      "Share in ₹25,00,000 Prize Pool matrix",
+      "Official Delhi NCR Esports Jersey discount"
+    ],
+    buttonText: "Register Roster Now"
+  },
+  {
+    name: "VIP Spectator & Creator Pass",
+    badge: "VIP ACCESS",
+    price: "₹0",
+    period: "VIP Access",
+    featured: false,
+    color: "border-white/10",
+    features: [
+      "Front-row mainstage VIP seating at CyberHub",
+      "Creator Lounge access & Meet and Greet",
+      "Exclusive Delhi NCR Gameverse 2026 Badge",
+      "Priority entry for Sim Racing Motion Rigs"
+    ],
+    buttonText: "Request VIP Pass"
+  }
+];
+---
+
+<section id="passes" class="py-24 bg-[#07070a] border-b border-white/10 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Title -->
+    <div class="text-center mb-16 space-y-3">
+      <span class="text-xs font-mono-code text-[#7928ca] uppercase tracking-widest bg-[#7928ca]/10 border border-[#7928ca]/30 px-3 py-1 rounded-full">
+        FESTIVAL PASSES
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight heading-section">
+        Choose Your Festival Pass.
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-base">
+        All passes are 100% free of charge. Pick your tier to reserve your spot before venue limits are reached.
+      </p>
+    </div>
+
+    <!-- Pass Tiers Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      {passTiers.map((tier) => (
+        <div class={`aurora-card rounded-3xl p-8 border ${tier.color} relative flex flex-col justify-between group hover:border-[#7928ca] transition-all`}>
+          {tier.featured && (
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#7928ca] via-[#007cf0] to-[#50e3c2] text-white font-mono-code font-bold text-[10px] uppercase px-3 py-1 rounded-full tracking-wider shadow-lg">
+              {tier.badge}
+            </div>
+          )}
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono-code text-gray-400 uppercase tracking-wider">{tier.name}</span>
+              {!tier.featured && (
+                <span class="text-[10px] font-mono-code bg-white/5 border border-white/10 text-gray-300 px-2 py-0.5 rounded-full">
+                  {tier.badge}
+                </span>
+              )}
+            </div>
+
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-extrabold text-white heading-section">{tier.price}</span>
+              <span class="text-xs font-mono-code text-gray-400">/ {tier.period}</span>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              {tier.features.map((feat) => (
+                <div class="flex items-start gap-2.5 text-xs text-gray-300">
+                  <svg class="w-4 h-4 text-[#50e3c2] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>{feat}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button 
+            onclick="document.getElementById('ticket-modal').classList.remove('hidden')"
+            class={`w-full py-3.5 rounded-full text-xs font-semibold font-mono-code transition-all duration-300 cursor-pointer ${
+              tier.featured 
+                ? "bg-gradient-to-r from-[#7928ca] via-[#007cf0] to-[#50e3c2] text-white hover:shadow-xl hover:shadow-[#7928ca]/40" 
+                : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
+            }`}
+          >
+            {tier.buttonText}
+          </button>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

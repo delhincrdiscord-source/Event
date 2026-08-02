@@ -1,0 +1,61 @@
+{
+  "name": "gameverse",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:landing": "turbo dev --filter=@gameverse/landing",
+    "dev:dashboard": "turbo dev --filter=@gameverse/dashboard",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "db:generate": "turbo db:generate --filter=@gameverse/database",
+    "db:push": "turbo db:push --filter=@gameverse/database",
+    "db:studio": "turbo db:studio --filter=@gameverse/database",
+    "db:migrate:dev": "turbo db:migrate:dev --filter=@gameverse/database",
+    "db:migrate:deploy": "turbo db:migrate:deploy --filter=@gameverse/database",
+    "db:seed": "turbo db:seed --filter=@gameverse/database",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,mjs,json,md,css,astro}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mjs,json,md,css,astro}\""
+  },
+  "dependencies": {
+    "@radix-ui/primitive": "^1.1.0",
+    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-checkbox": "^1.1.0",
+    "@radix-ui/react-compose-refs": "^1.1.0",
+    "@radix-ui/react-context": "^1.1.0",
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-direction": "^1.1.0",
+    "@radix-ui/react-dismissable-layer": "^1.1.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.0",
+    "@radix-ui/react-focus-guards": "^1.1.0",
+    "@radix-ui/react-focus-scope": "^1.1.0",
+    "@radix-ui/react-id": "^1.1.0",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-menu": "^2.1.0",
+    "@radix-ui/react-popover": "^1.1.0",
+    "@radix-ui/react-popper": "^1.1.0",
+    "@radix-ui/react-portal": "^1.1.0",
+    "@radix-ui/react-presence": "^1.1.0",
+    "@radix-ui/react-primitive": "^2.0.0",
+    "@radix-ui/react-select": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.0",
+    "@radix-ui/react-use-controllable-state": "^1.1.0",
+    "@radix-ui/react-use-escape-keydown": "^1.1.0",
+    "@radix-ui/react-use-layout-effect": "^1.1.0",
+    "@radix-ui/react-visually-hidden": "^1.1.0"
+  },
+  "devDependencies": {
+    "@gameverse/config": "workspace:*",
+    "prettier": "^3.5.0",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

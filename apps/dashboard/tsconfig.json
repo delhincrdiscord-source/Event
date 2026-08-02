@@ -1,0 +1,42 @@
+{
+  "extends": "@gameverse/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noImplicitAny": false,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@gameverse/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@gameverse/auth/*": [
+        "../../packages/auth/src/*"
+      ],
+      "@gameverse/database/*": [
+        "../../packages/database/src/*"
+      ],
+      "@gameverse/types/*": [
+        "../../packages/types/src/*"
+      ],
+      "@gameverse/utils/*": [
+        "../../packages/utils/src/*"
+      ],
+      "@gameverse/validation/*": [
+        "../../packages/validation/src/*"
+      ],
+      "@gameverse/constants/*": [
+        "../../packages/constants/src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
+}
