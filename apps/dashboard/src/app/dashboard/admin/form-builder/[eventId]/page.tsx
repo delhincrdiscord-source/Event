@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@gameverse/ui/button";
-import { Badge } from "@gameverse/ui/badge";
+
 import { Separator } from "@gameverse/ui/separator";
 import {
   Dialog,
@@ -28,17 +28,7 @@ import {
   DialogTitle,
 } from "@gameverse/ui/dialog";
 
-import {
-  getFormFields,
-  createFormField,
-  updateFormField,
-  deleteFormField,
-  reorderFormFields,
-  duplicateFormField,
-  saveFormVersion,
-  publishFormVersion,
-  unpublishFormVersion,
-} from "../_actions/form-builder";
+import { getFormFields, createFormField, updateFormField, deleteFormField, reorderFormFields, duplicateFormField, saveFormVersion, publishFormVersion,  } from "../_actions/form-builder";
 import { getEventById } from "../../events/_actions/event";
 
 import { FieldPalette } from "../_components/field-palette";
@@ -515,11 +505,8 @@ export default function FormBuilderEditorPage() {
           >
             <div
               className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm shadow-lg ${
-                autoSaveStatus === "saving"
-                  ? "bg-[var(--ds-gray-100)] text-[var(--ds-gray-600)] dark:bg-[var(--ds-gray-800)] dark:text-[var(--ds-gray-400)]"
-                  : autoSaveStatus === "saved"
-                    ? "bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400"
-                    : "bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                autoSaveStatus === "saving" ?"bg-[var(--ds-gray-100)] text-[var(--ds-gray-600)] dark:bg-[var(--ds-gray-800)] dark:text-[var(--ds-gray-400)]"
+                  : autoSaveStatus === "saved" ?"bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400" :"bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
               }`}
             >
               {autoSaveStatus === "saving" && (

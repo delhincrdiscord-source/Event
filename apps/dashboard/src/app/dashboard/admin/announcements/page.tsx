@@ -2,24 +2,7 @@
 
 import { useState, useEffect, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Plus,
-  Search,
-  MoreHorizontal,
-  Archive,
-  Trash2,
-  Copy,
-  Eye,
-  ChevronLeft,
-  ChevronRight,
-  Megaphone,
-  FileText,
-  Clock,
-  CheckCircle2,
-  Pin,
-  Globe,
-  Users,
-} from "lucide-react";
+import { Plus, Search, MoreHorizontal, Archive, Trash2, Copy, Eye, ChevronLeft, ChevronRight, Megaphone, FileText, Clock, CheckCircle2, Pin, Globe,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -65,16 +48,7 @@ import {
   DeleteAnnouncementDialog,
   DuplicateAnnouncementDialog,
 } from "./_components";
-import type {
-  AnnouncementListItem,
-  AnnouncementStatus,
-  AnnouncementStats,
-  AnnouncementPriority,
-  AnnouncementVisibility,
-  PaginatedAnnouncements,
-  FestivalListItem,
-  AnnouncementWithRelations,
-} from "@gameverse/types";
+import type { AnnouncementListItem, AnnouncementStatus, AnnouncementStats, AnnouncementPriority, AnnouncementVisibility, FestivalListItem, AnnouncementWithRelations,  } from "@gameverse/types";
 import {
   ANNOUNCEMENT_STATUS_LABELS,
   ANNOUNCEMENT_STATUS_COLORS,
@@ -120,9 +94,9 @@ export default function AnnouncementsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    status: "ALL" as AnnouncementStatus | "ALL",
-    priority: "ALL" as AnnouncementPriority | "ALL",
-    visibility: "ALL" as AnnouncementVisibility | "ALL",
+    status: "ALL\" as AnnouncementStatus | \"ALL",
+    priority: "ALL\" as AnnouncementPriority | \"ALL",
+    visibility: "ALL\" as AnnouncementVisibility | \"ALL",
     festivalId: "ALL",
     dateFrom: "",
     dateTo: "",
@@ -137,11 +111,11 @@ export default function AnnouncementsPage() {
   const fetchAnnouncements = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getAnnouncements({
+      let result = await getAnnouncements({
         search: filters.search || undefined,
-        status: filters.status === "ALL" ? undefined : filters.status,
-        priority: filters.priority === "ALL" ? undefined : filters.priority,
-        visibility: filters.visibility === "ALL" ? undefined : filters.visibility,
+        status: filters.status === "ALL" ? undefined : filters.status as "DRAFT" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined,
+        priority: filters.priority === "ALL" ? undefined : filters.priority as "LOW" | "MEDIUM" | "HIGH" | "URGENT" | undefined,
+        visibility: filters.visibility === "ALL" ? undefined : filters.visibility as "PUBLIC" | "REGISTERED" | "APPROVED" | undefined,
         festivalId: filters.festivalId === "ALL" ? undefined : filters.festivalId,
         dateFrom: filters.dateFrom || undefined,
         dateTo: filters.dateTo || undefined,
@@ -164,14 +138,14 @@ export default function AnnouncementsPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getAnnouncementStats();
+    let result = await getAnnouncementStats();
     if (result.success && result.data) {
       setStats(result.data);
     }
   }, []);
 
   const fetchFestivals = useCallback(async () => {
-    const result = await getAllFestivals();
+    let result = await getAllFestivals();
     if (result.success && result.data) {
       setFestivals(result.data);
     }
@@ -275,7 +249,7 @@ export default function AnnouncementsPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteAnnouncement(id);
+      let result = await deleteAnnouncement(id);
       if (result.success) {
         setDeleteDialogOpen(false);
         setSelectedAnnouncement(null);
@@ -287,7 +261,7 @@ export default function AnnouncementsPage() {
 
   const handlePublish = async (id: string) => {
     startTransition(async () => {
-      const result = await publishAnnouncement(id);
+      let result = await publishAnnouncement(id);
       if (result.success) {
         fetchAnnouncements();
         fetchStats();
@@ -297,7 +271,7 @@ export default function AnnouncementsPage() {
 
   const handleArchive = async (id: string) => {
     startTransition(async () => {
-      const result = await archiveAnnouncement(id);
+      let result = await archiveAnnouncement(id);
       if (result.success) {
         fetchAnnouncements();
         fetchStats();
@@ -577,8 +551,7 @@ export default function AnnouncementsPage() {
                   filters.festivalId !== "ALL" ||
                   filters.dateFrom ||
                   filters.dateTo
-                    ? "Try adjusting your search or filter criteria"
-                    : "Create your first announcement to get started"}
+                    ? "Try adjusting your search or filter criteria" :"Create your first announcement to get started"}
                 </p>
                 {!filters.search &&
                   filters.status === "ALL" &&

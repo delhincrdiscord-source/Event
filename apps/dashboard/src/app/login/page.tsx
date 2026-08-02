@@ -71,8 +71,7 @@ function LoginForm() {
             </h1>
             <p className="text-sm text-muted-foreground">
               {isAdminMode
-                ? "Sign in with your admin credentials"
-                : "Sign in with Discord to access your dashboard"}
+                ? "Sign in with your admin credentials" :"Sign in with Discord to access your dashboard"}
             </p>
           </div>
         </div>
@@ -84,8 +83,7 @@ function LoginForm() {
             </CardTitle>
             <CardDescription>
               {isAdminMode
-                ? "Enter your credentials to access the dashboard"
-                : "Connect your Discord account to get started"}
+                ? "Enter your credentials to access the dashboard" :"Connect your Discord account to get started"}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

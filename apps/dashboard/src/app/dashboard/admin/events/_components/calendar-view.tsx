@@ -2,14 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Calendar,
-  Clock,
-  MapPin,
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Calendar, Clock,  } from "lucide-react";
+
 
 import { Button } from "@gameverse/ui/button";
 import { Badge } from "@gameverse/ui/badge";
@@ -27,10 +21,7 @@ import {
 
 import { getCalendarEvents } from "../_actions/event";
 import type { CalendarEvent, EventStatus } from "@gameverse/types";
-import {
-  EVENT_STATUS_LABELS,
-  EVENT_STATUS_COLORS,
-} from "@gameverse/types";
+import { EVENT_STATUS_LABELS,  } from "@gameverse/types";
 
 interface CalendarViewProps {
   festivalId?: string;

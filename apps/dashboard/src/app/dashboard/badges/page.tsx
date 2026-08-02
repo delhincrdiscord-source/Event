@@ -3,12 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent,  } from "@gameverse/ui/card";
 import { Badge } from "@gameverse/ui/badge";
 import { Skeleton } from "@gameverse/ui/skeleton";
 
@@ -61,8 +56,7 @@ function BadgeCard({ badge, earned }: { badge: BadgeItem; earned: boolean }) {
       <Card
         className={`transition-all ${
           earned
-            ? "border-primary/20"
-            : "opacity-60 grayscale"
+            ? "border-primary/20" :"opacity-60 grayscale"
         }`}
       >
         <CardContent className="p-5">

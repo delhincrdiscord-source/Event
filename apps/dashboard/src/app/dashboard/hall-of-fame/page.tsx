@@ -163,8 +163,7 @@ export default function HallOfFamePage() {
                         player.rank === 1
                           ? "border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-transparent"
                           : player.rank === 2
-                          ? "border-gray-400/30"
-                          : "border-amber-600/30"
+                          ? "border-gray-400/30" :"border-amber-600/30"
                       }`}
                     >
                       <CardContent className="p-6">

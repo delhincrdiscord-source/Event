@@ -173,7 +173,7 @@ export default function FestivalEditPage({
   useEffect(() => {
     if (!isCreate) {
       const fetchFestival = async () => {
-        const result = await getFestivalById(id);
+        let result = await getFestivalById(id);
         if (result.success && result.data) {
           const f = result.data;
           setName(f.name);
@@ -347,8 +347,7 @@ export default function FestivalEditPage({
           </h1>
           <p className="text-sm text-[#888888]">
             {isCreate
-              ? "Set up a new gaming festival"
-              : "Update festival details and settings"}
+              ? "Set up a new gaming festival" :"Update festival details and settings"}
           </p>
         </div>
       </div>

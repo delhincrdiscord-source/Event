@@ -1,26 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback, useTransition } from "react";
-import {
-  Terminal,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Trash2,
-  Edit,
-  Clock,
-  Loader2,
-  RefreshCw,
-  ToggleLeft,
-  ToggleRight,
-  Code,
-} from "lucide-react";
+import { Terminal, Plus, Search, MoreHorizontal, Trash2, Loader2, ToggleLeft, ToggleRight, Code,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
 import { Input } from "@gameverse/ui/input";
 import { Label } from "@gameverse/ui/label";
-import { Badge } from "@gameverse/ui/badge";
+
 import {
   Card,
   CardContent,
@@ -201,8 +188,7 @@ export default function SlashCommandsPage() {
               </h3>
               <p className="text-sm text-muted-foreground">
                 {searchQuery
-                  ? "Try adjusting your search"
-                  : "Create your first slash command to get started"}
+                  ? "Try adjusting your search" :"Create your first slash command to get started"}
               </p>
               {!searchQuery && (
                 <Button
@@ -290,8 +276,7 @@ export default function SlashCommandsPage() {
                                 <ToggleRight className="mr-2 h-4 w-4" />
                               )}
                               {command.isEnabled
-                                ? "Disable"
-                                : "Enable"}
+                                ? "Disable" :"Enable"}
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem

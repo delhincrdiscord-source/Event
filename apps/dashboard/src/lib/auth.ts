@@ -95,11 +95,13 @@ export async function requireRole(minRole: RoleName): Promise<AuthSession> {
 }
 
 export class AuthError extends Error {
+  code: string;
   constructor(
-    public code: string,
+    code: string,
     message: string,
   ) {
     super(message);
+    this.code = code;
     this.name = "AuthError";
   }
 }

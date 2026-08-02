@@ -3,27 +3,7 @@
 // =====================================================
 
 export type FormFieldType =
-  | "SHORT_TEXT"
-  | "LONG_TEXT"
-  | "EMAIL"
-  | "NUMBER"
-  | "PHONE"
-  | "DISCORD_USERNAME"
-  | "DISCORD_USER_ID"
-  | "GAME_UID"
-  | "IGN"
-  | "SELECT"
-  | "MULTI_SELECT"
-  | "CHECKBOX"
-  | "RADIO"
-  | "DATE"
-  | "TIME"
-  | "COUNTRY"
-  | "FILE_UPLOAD"
-  | "URL"
-  | "SECTION_HEADER"
-  | "DIVIDER"
-  | "PARAGRAPH";
+  | "SHORT_TEXT" |"LONG_TEXT" |"EMAIL" |"NUMBER" |"PHONE" |"DISCORD_USERNAME" |"DISCORD_USER_ID" |"GAME_UID" |"IGN" |"SELECT" |"MULTI_SELECT" |"CHECKBOX" |"RADIO" |"DATE" |"TIME" |"COUNTRY" |"FILE_UPLOAD" |"URL" |"SECTION_HEADER" |"DIVIDER" |"PARAGRAPH";
 
 export type FormStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 

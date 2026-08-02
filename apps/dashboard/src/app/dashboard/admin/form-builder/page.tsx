@@ -3,43 +3,10 @@
 import { useState, useEffect, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Plus,
-  Search,
-  FileText,
-  Eye,
-  EyeOff,
-  Clock,
-  CheckCircle2,
-  History,
-  Settings,
-  Loader2,
-  GripVertical,
-  Pencil,
-  Copy,
-  Trash2,
-  Type,
-  AlignLeft,
-  Mail,
-  Hash,
-  Phone,
-  MessageSquare,
-  Gamepad2,
-  User,
-  ChevronDown,
-  CheckSquare,
-  Check,
-  Circle,
-  Calendar,
-  Globe,
-  Upload,
-  Link,
-  Heading,
-  Minus,
-} from "lucide-react";
+import { Plus, FileText, Eye, EyeOff, Clock, CheckCircle2, History, Settings, Pencil, Copy, Trash2, Type, AlignLeft, Mail, Hash, Phone, MessageSquare, Gamepad2, User, ChevronDown, CheckSquare, Check, Circle, Calendar, Globe, Upload, Link, Heading, Minus,  } from "lucide-react";
 
 import { Button } from "@gameverse/ui/button";
-import { Input } from "@gameverse/ui/input";
+
 import { Label } from "@gameverse/ui/label";
 import { Badge } from "@gameverse/ui/badge";
 import {
@@ -57,7 +24,7 @@ import {
   SelectValue,
 } from "@gameverse/ui/select";
 import { Skeleton } from "@gameverse/ui/skeleton";
-import { Separator } from "@gameverse/ui/separator";
+
 import {
   Dialog,
   DialogContent,
@@ -67,29 +34,13 @@ import {
   DialogTitle,
 } from "@gameverse/ui/dialog";
 
-import {
-  getFormFields,
-  deleteFormField,
-  duplicateFormField,
-  getFormStats,
-  getFormVersions,
-  publishFormVersion,
-  unpublishFormVersion,
-} from "./_actions/form-builder";
+import { getFormFields, deleteFormField, duplicateFormField, getFormStats, getFormVersions,  } from "./_actions/form-builder";
 import { getAllFestivals } from "../festivals/_actions/festival";
 import { getEvents } from "../events/_actions/event";
 
 import { FormPreview } from "./_components/form-preview";
 
-import type {
-  FormFieldConfig,
-  FormFieldListItem,
-  FormStatus,
-  FormStats,
-  FormVersionListItem,
-  FestivalListItem,
-  CommunityEventListItem,
-} from "@gameverse/types";
+import type { FormFieldConfig, FormStats, FormVersionListItem, FestivalListItem, CommunityEventListItem,  } from "@gameverse/types";
 import {
   FORM_FIELD_TYPE_LABELS,
   FORM_FIELD_TYPE_ICONS,

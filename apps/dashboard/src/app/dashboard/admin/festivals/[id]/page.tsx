@@ -2,35 +2,11 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Calendar,
-  Clock,
-  MapPin,
-  Users,
-  Settings,
-  ExternalLink,
-  Copy,
-  Trash2,
-  Archive,
-  RefreshCw,
-  CheckCircle2,
-  XCircle,
-  FileText,
-  Globe,
-  Lock,
-  EyeOff,
-} from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Settings, ExternalLink, Trash2, Archive, RefreshCw, CheckCircle2, XCircle, Globe, Lock, EyeOff,  } from "lucide-react";
 
 import { Button } from "@gameverse/ui/button";
 import { Badge } from "@gameverse/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent, CardHeader, CardTitle,  } from "@gameverse/ui/card";
 import { Separator } from "@gameverse/ui/separator";
 import { Skeleton } from "@gameverse/ui/skeleton";
 

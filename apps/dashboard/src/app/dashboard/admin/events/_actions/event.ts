@@ -1,7 +1,7 @@
 "use server";
 
-import { requireAuth, requireAdmin, AuthError } from "@/lib/auth";
-import { checkMutationRateLimit, checkReadRateLimit } from "@/lib/rate-limit";
+import { requireAuth, requireAdmin } from "@/lib/auth";
+import { checkMutationRateLimit } from "@/lib/rate-limit";
 import { handleActionError, ok, type ActionResult } from "@/lib/errors";
 import { writeAuditLog } from "@/lib/audit";
 import { eventRepository, festivalRepository } from "@gameverse/database";
@@ -496,12 +496,7 @@ export async function bulkArchiveEvents(
 export async function bulkUpdateEventStatus(
   ids: string[],
   status:
-    | "DRAFT"
-    | "PUBLISHED"
-    | "LIVE"
-    | "COMPLETED"
-    | "CANCELLED"
-    | "ARCHIVED"
+    | "DRAFT" |"PUBLISHED" |"LIVE" |"COMPLETED" |"CANCELLED" |"ARCHIVED"
 ): Promise<ActionResult<null>> {
   try {
     const session = await requireAdmin();

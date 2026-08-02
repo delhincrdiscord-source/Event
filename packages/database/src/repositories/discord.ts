@@ -1,42 +1,6 @@
-import { Prisma } from "@prisma/client";
+
 import { prisma } from "@gameverse/database";
-import type {
-  DiscordConfig,
-  DiscordConfigWithRelations,
-  UpdateDiscordConfigInput,
-  DiscordGuild,
-  DiscordRole,
-  DiscordRoleListItem,
-  DiscordChannel,
-  DiscordChannelListItem,
-  DiscordWebhook,
-  DiscordWebhookListItem,
-  CreateDiscordWebhookInput,
-  UpdateDiscordWebhookInput,
-  DiscordRoleMapping,
-  DiscordRoleMappingListItem,
-  CreateDiscordRoleMappingInput,
-  UpdateDiscordRoleMappingInput,
-  DiscordAutomation,
-  CreateDiscordAutomationInput,
-  UpdateDiscordAutomationInput,
-  DiscordSlashCommand,
-  CreateDiscordSlashCommandInput,
-  UpdateDiscordSlashCommandInput,
-  DiscordWebhookLog,
-  DiscordWebhookLogListItem,
-  DiscordWebhookLogFilters,
-  PaginatedDiscordWebhookLogs,
-  DiscordMemberSync,
-  DiscordMemberSyncFilters,
-  PaginatedDiscordMemberSyncs,
-  DiscordActivityLog,
-  DiscordActivityLogListItem,
-  DiscordActivityLogFilters,
-  PaginatedDiscordActivityLogs,
-  BotStatusInfo,
-  DiscordIntegrationStats,
-} from "@gameverse/types";
+import type { DiscordConfig, DiscordConfigWithRelations, UpdateDiscordConfigInput, DiscordGuild, DiscordRoleListItem, DiscordChannelListItem, DiscordWebhook, DiscordWebhookListItem, CreateDiscordWebhookInput, UpdateDiscordWebhookInput, DiscordRoleMapping, DiscordRoleMappingListItem, CreateDiscordRoleMappingInput, UpdateDiscordRoleMappingInput, DiscordAutomation, CreateDiscordAutomationInput, UpdateDiscordAutomationInput, DiscordSlashCommand, CreateDiscordSlashCommandInput, UpdateDiscordSlashCommandInput, DiscordWebhookLog, DiscordWebhookLogListItem, DiscordWebhookLogFilters, PaginatedDiscordWebhookLogs, DiscordMemberSync, DiscordMemberSyncFilters, PaginatedDiscordMemberSyncs, DiscordActivityLog, DiscordActivityLogListItem, DiscordActivityLogFilters, PaginatedDiscordActivityLogs, BotStatusInfo, DiscordIntegrationStats,  } from "@gameverse/types";
 
 // =====================================================
 // Discord Repository

@@ -4,12 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent,  } from "@gameverse/ui/card";
 import { Badge } from "@gameverse/ui/badge";
 import { Button } from "@gameverse/ui/button";
 import { Skeleton } from "@gameverse/ui/skeleton";

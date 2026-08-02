@@ -5,26 +5,11 @@
 export type BotStatus = "ONLINE" | "OFFLINE" | "ERROR" | "STARTING" | "STOPPING";
 export type DiscordAccountStatus = "CONNECTED" | "DISCONNECTED" | "ERROR";
 export type AutomationTrigger =
-  | "REGISTRATION_APPROVED"
-  | "ANNOUNCEMENT_PUBLISHED"
-  | "EVENT_PUBLISHED"
-  | "EVENT_REMINDER"
-  | "EVENT_COMPLETED"
-  | "USER_JOINED"
-  | "USER_LEFT";
+  | "REGISTRATION_APPROVED" |"ANNOUNCEMENT_PUBLISHED" |"EVENT_PUBLISHED" |"EVENT_REMINDER" |"EVENT_COMPLETED" |"USER_JOINED" |"USER_LEFT";
 export type AutomationAction =
-  | "ASSIGN_ROLE"
-  | "REMOVE_ROLE"
-  | "SEND_EMBED"
-  | "SEND_MESSAGE"
-  | "SEND_NOTIFICATION";
+  | "ASSIGN_ROLE" |"REMOVE_ROLE" |"SEND_EMBED" |"SEND_MESSAGE" |"SEND_NOTIFICATION";
 export type LogEventType =
-  | "GUILD_EVENT"
-  | "ROLE_CHANGE"
-  | "WEBHOOK_EVENT"
-  | "SLASH_COMMAND"
-  | "BOT_EVENT"
-  | "ERROR";
+  | "GUILD_EVENT" |"ROLE_CHANGE" |"WEBHOOK_EVENT" |"SLASH_COMMAND" |"BOT_EVENT" |"ERROR";
 
 // =====================================================
 // Discord Config

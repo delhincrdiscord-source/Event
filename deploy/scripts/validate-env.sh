@@ -36,10 +36,7 @@ check_optional() {
     fi
 }
 
-echo "====================================================="
-echo "  Gameverse 2026 — Environment Validation"
-echo "====================================================="
-echo ""
+echo "=====================================================" echo"  Gameverse 2026 — Environment Validation" echo"=====================================================" echo""
 
 # Load .env if it exists
 if [ -f .env ]; then
@@ -52,25 +49,13 @@ else
     exit 1
 fi
 
-echo ""
-echo "--- Required Variables ---"
-check_required "DATABASE_URL" "PostgreSQL connection string"
-check_required "BETTER_AUTH_SECRET" "64-char random string for session signing"
+echo "" echo"--- Required Variables ---" check_required"DATABASE_URL""PostgreSQL connection string" check_required"BETTER_AUTH_SECRET" "64-char random string for session signing"
 check_required "BETTER_AUTH_URL" "Dashboard URL (e.g. https://dashboard.delhincr.fun)"
-check_required "DISCORD_CLIENT_ID" "Discord OAuth app client ID"
-check_required "DISCORD_CLIENT_SECRET" "Discord OAuth app client secret"
-check_required "DISCORD_GUILD_ID" "Discord server/guild ID"
-check_required "DISCORD_BOT_TOKEN" "Discord bot token"
-check_required "UPSTASH_REDIS_REST_URL" "Upstash Redis REST URL"
-check_required "UPSTASH_REDIS_REST_TOKEN" "Upstash Redis REST token"
-check_required "TOKEN_ENCRYPTION_KEY" "64-char hex key (32 bytes) for AES-256-GCM"
-check_required "ADMIN_EMAIL" "Initial admin user email"
-check_required "ADMIN_PASSWORD" "Initial admin user password (min 8 chars)"
+check_required "DISCORD_CLIENT_ID""Discord OAuth app client ID" check_required"DISCORD_CLIENT_SECRET""Discord OAuth app client secret" check_required"DISCORD_GUILD_ID""Discord server/guild ID" check_required"DISCORD_BOT_TOKEN""Discord bot token" check_required"UPSTASH_REDIS_REST_URL""Upstash Redis REST URL" check_required"UPSTASH_REDIS_REST_TOKEN""Upstash Redis REST token" check_required"TOKEN_ENCRYPTION_KEY" "64-char hex key (32 bytes) for AES-256-GCM"
+check_required "ADMIN_EMAIL""Initial admin user email" check_required"ADMIN_PASSWORD" "Initial admin user password (min 8 chars)"
 check_required "HEALTH_ENDPOINT_TOKEN" "Token for authenticated health endpoints"
 
-echo ""
-echo "--- Optional Variables ---"
-check_optional "NEXT_PUBLIC_LANDING_URL" "Landing page URL (default: https://gameverse.delhincr.fun)"
+echo "" echo"--- Optional Variables ---" check_optional"NEXT_PUBLIC_LANDING_URL" "Landing page URL (default: https://gameverse.delhincr.fun)"
 check_optional "NEXT_PUBLIC_DASHBOARD_URL" "Dashboard URL (default: https://dashboard.delhincr.fun)"
 check_optional "HEALTH_PORT" "Bot health port (default: 3001)"
 check_optional "LOG_LEVEL" "Log level (default: info)"

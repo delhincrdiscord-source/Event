@@ -2,26 +2,7 @@
 
 import { useState, useEffect, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Calendar,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Archive,
-  Trash2,
-  Copy,
-  Eye,
-  RefreshCw,
-  CalendarDays,
-  Clock,
-  CheckCircle2,
-  FileText,
-  List,
-  CalendarIcon,
-  Users,
-} from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight, Plus, Search, MoreHorizontal, Archive, Trash2, Copy, Eye, RefreshCw, CalendarDays, CheckCircle2, FileText, List, CalendarIcon, Users,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -73,15 +54,7 @@ import {
   PublishEventDialog,
   CalendarView,
 } from "./_components";
-import type {
-  CommunityEventListItem,
-  EventStatus,
-  EventVisibility,
-  PaginatedEvents,
-  EventStats,
-  EventCategoryListItem,
-  FestivalListItem,
-} from "@gameverse/types";
+import type { CommunityEventListItem, EventStatus, EventStats, EventCategoryListItem, FestivalListItem,  } from "@gameverse/types";
 import {
   EVENT_STATUS_LABELS,
   EVENT_STATUS_COLORS,
@@ -165,7 +138,7 @@ export default function EventsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    status: "ALL" as EventStatus | "ALL",
+    status: "ALL\" as EventStatus | \"ALL",
     categoryId: "ALL",
     festivalId: "ALL",
   });
@@ -181,7 +154,7 @@ export default function EventsPage() {
   const fetchEvents = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getEvents({
+      let result = await getEvents({
         search: filters.search || undefined,
         status: filters.status === "ALL" ? undefined : filters.status,
         categoryId: filters.categoryId === "ALL" ? undefined : filters.categoryId,
@@ -205,21 +178,21 @@ export default function EventsPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getEventStats();
+    let result = await getEventStats();
     if (result.success && result.data) {
       setStats(result.data);
     }
   }, []);
 
   const fetchCategories = useCallback(async () => {
-    const result = await getAllCategories();
+    let result = await getAllCategories();
     if (result.success && result.data) {
       setCategories(result.data);
     }
   }, []);
 
   const fetchFestivals = useCallback(async () => {
-    const result = await getAllFestivals();
+    let result = await getAllFestivals();
     if (result.success && result.data) {
       setFestivals(result.data);
     }
@@ -291,11 +264,7 @@ export default function EventsPage() {
         case "archive":
           result = await bulkArchiveEvents({ eventIds: selectedIds });
           break;
-        case "DRAFT":
-        case "PUBLISHED":
-        case "LIVE":
-        case "COMPLETED":
-        case "ARCHIVED":
+        case "DRAFT": case"PUBLISHED": case"LIVE": case"COMPLETED": case"ARCHIVED":
           result = await bulkUpdateEventStatus(selectedIds, action);
           break;
       }
@@ -310,7 +279,7 @@ export default function EventsPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteEvent(id);
+      let result = await deleteEvent(id);
       if (result.success) {
         setDeleteDialogOpen(false);
         setSelectedEvent(null);
@@ -322,7 +291,7 @@ export default function EventsPage() {
 
   const handlePublish = async (id: string) => {
     startTransition(async () => {
-      const result = await publishEvent(id);
+      let result = await publishEvent(id);
       if (result.success) {
         setPublishDialogOpen(false);
         setSelectedEvent(null);
@@ -334,7 +303,7 @@ export default function EventsPage() {
 
   const handleUnpublish = async (id: string) => {
     startTransition(async () => {
-      const result = await unpublishEvent(id);
+      let result = await unpublishEvent(id);
       if (result.success) {
         setPublishDialogOpen(false);
         setSelectedEvent(null);
@@ -346,7 +315,7 @@ export default function EventsPage() {
 
   const handleArchive = async (id: string) => {
     startTransition(async () => {
-      const result = await archiveEvent(id);
+      let result = await archiveEvent(id);
       if (result.success) {
         fetchEvents();
         fetchStats();
@@ -356,7 +325,7 @@ export default function EventsPage() {
 
   const handleRestore = async (id: string) => {
     startTransition(async () => {
-      const result = await restoreEvent(id);
+      let result = await restoreEvent(id);
       if (result.success) {
         fetchEvents();
         fetchStats();
@@ -630,9 +599,7 @@ export default function EventsPage() {
                       {filters.search ||
                       filters.status !== "ALL" ||
                       filters.categoryId !== "ALL" ||
-                      filters.festivalId !== "ALL"
-                        ? "Try adjusting your search or filter criteria"
-                        : "Create your first event to get started"}
+                      filters.festivalId !== "ALL" ?"Try adjusting your search or filter criteria" :"Create your first event to get started"}
                     </p>
                     {!filters.search &&
                       filters.status === "ALL" &&

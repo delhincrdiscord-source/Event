@@ -16,13 +16,13 @@ export function SettingsNav() {
 
   return (
     <nav className="flex flex-row gap-1 lg:w-48 lg:flex-col">
-      {settingsLinks.map((link) => {
-        const Icon = link.icon;
-        const isActive = pathname === link.href;
+      {settingsLinks?.map((link) => {
+        const Icon = link?.icon;
+        const isActive = pathname === link?.href;
         return (
           <Link
-            key={link.href}
-            href={link.href}
+            key={link?.href}
+            href={link?.href}
             className={cn(
               "flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors",
               isActive
@@ -31,7 +31,7 @@ export function SettingsNav() {
             )}
           >
             <Icon className="h-4 w-4" />
-            {link.label}
+            {link?.label}
           </Link>
         );
       })}

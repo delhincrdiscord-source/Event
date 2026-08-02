@@ -1,9 +1,9 @@
-export { Button, buttonVariants } from "./button";
-export type { ButtonProps } from "./button";
-export { Avatar, AvatarImage, AvatarFallback } from "./avatar";
-export { Badge, badgeVariants } from "./badge";
-export type { BadgeProps } from "./badge";
-export {
+import { Button, buttonVariants } from "./button";
+import type { ButtonProps } from "./button";
+import { Avatar, AvatarImage, AvatarFallback } from "./avatar";
+import { Badge, badgeVariants } from "./badge";
+import type { BadgeProps } from "./badge";
+import {
   Card,
   CardHeader,
   CardFooter,
@@ -11,10 +11,10 @@ export {
   CardDescription,
   CardContent,
 } from "./card";
-export { Separator } from "./separator";
-export { Skeleton } from "./skeleton";
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./tooltip";
-export {
+import { Separator } from "./separator";
+import { Skeleton } from "./skeleton";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./tooltip";
+import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -22,3 +22,33 @@ export {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "./dropdown-menu";
+
+export {
+  Button,
+  buttonVariants,
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  Badge,
+  badgeVariants,
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  Separator,
+  Skeleton,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+};
+
+export type { ButtonProps, BadgeProps };

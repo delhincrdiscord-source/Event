@@ -20,7 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@gameverse/ui/card";
-import { Skeleton } from "@gameverse/ui/skeleton";
+
 
 import { createCategory } from "../_actions/category";
 import type { CreateCategoryInput } from "@gameverse/types";

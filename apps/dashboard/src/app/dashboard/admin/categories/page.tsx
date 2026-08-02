@@ -82,8 +82,8 @@ export default function CategoriesPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    sortBy: "sortOrder" as "name" | "sortOrder" | "createdAt",
-    sortOrder: "asc" as "asc" | "desc",
+    sortBy: "sortOrder\" as \"name\" | \"sortOrder\" | \"createdAt",
+    sortOrder: "asc\" as \"asc\" | \"desc",
   });
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -99,7 +99,7 @@ export default function CategoriesPage() {
   const fetchCategories = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getCategories({
+      let result = await getCategories({
         search: filters.search || undefined,
         sortBy: filters.sortBy,
         sortOrder: filters.sortOrder,
@@ -121,7 +121,7 @@ export default function CategoriesPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getCategoryStats();
+    let result = await getCategoryStats();
     if (result.success && result.data) {
       setStats(result.data as CategoryStats);
     }
@@ -193,7 +193,7 @@ export default function CategoriesPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteCategory(id);
+      let result = await deleteCategory(id);
       if (result.success) {
         setDeleteDialog({ open: false, category: null });
         fetchCategories();
@@ -204,7 +204,7 @@ export default function CategoriesPage() {
 
   const handleRestore = async (id: string) => {
     startTransition(async () => {
-      const result = await restoreCategory(id);
+      let result = await restoreCategory(id);
       if (result.success) {
         fetchCategories();
         fetchStats();
@@ -384,8 +384,7 @@ export default function CategoriesPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   {filters.search
-                    ? "Try adjusting your search criteria"
-                    : "Create your first category to get started"}
+                    ? "Try adjusting your search criteria" :"Create your first category to get started"}
                 </p>
                 {!filters.search && (
                   <Button
@@ -480,8 +479,7 @@ export default function CategoriesPage() {
                           variant={category.isActive ? "default" : "secondary"}
                           className={
                             category.isActive
-                              ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                              : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
+                              ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100" :"bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
                           }
                         >
                           {category.isActive ? "Active" : "Inactive"}

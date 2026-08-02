@@ -3,15 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Calendar,
-  MapPin,
-  Users,
-  Clock,
-  ChevronRight,
-  Loader2,
-  Search,
-} from "lucide-react";
+import { Calendar, MapPin, Users, Clock, ChevronRight, Search,  } from "lucide-react";
 
 import {
   Card,
@@ -219,9 +211,7 @@ export default function EventsPage() {
               {search || filter !== "all" ? "No matching events" : "No events yet"}
             </h3>
             <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-              {search || filter !== "all"
-                ? "Try adjusting your search or filters"
-                : "Events will appear here once they are published"}
+              {search || filter !== "all" ?"Try adjusting your search or filters" :"Events will appear here once they are published"}
             </p>
           </CardContent>
         </Card>

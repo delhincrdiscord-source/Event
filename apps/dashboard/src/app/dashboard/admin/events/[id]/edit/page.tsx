@@ -2,17 +2,7 @@
 
 import { useState, useEffect, useCallback, use } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Save,
-  Loader2,
-  Calendar,
-  MessageSquare,
-  Users,
-  Settings,
-  Globe,
-  Image,
-} from "lucide-react";
+import { ArrowLeft, Save, Loader2, Calendar, MessageSquare, Users, Settings, Image,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";

@@ -3,12 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent,  } from "@gameverse/ui/card";
 import { Badge } from "@gameverse/ui/badge";
 import { Skeleton } from "@gameverse/ui/skeleton";
 
@@ -51,8 +46,7 @@ function AchievementCard({ achievement, unlocked }: { achievement: Achievement; 
       <Card
         className={`transition-all ${
           unlocked
-            ? "border-green-500/30 bg-green-500/5"
-            : "opacity-60 grayscale"
+            ? "border-green-500/30 bg-green-500/5" :"opacity-60 grayscale"
         }`}
       >
         <CardContent className="p-5">

@@ -1,6 +1,7 @@
 "use client";
 
-import * as React from "react";
+
+import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import { motion, AnimatePresence } from "framer-motion";

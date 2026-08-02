@@ -2,17 +2,7 @@
 
 import { useState, useEffect, useCallback, use } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Save,
-  Loader2,
-  Megaphone,
-  Settings,
-  Globe,
-  Calendar,
-  Tag,
-  Image,
-} from "lucide-react";
+import { ArrowLeft, Save, Loader2, Settings, Globe, Calendar, Tag, Image,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -598,9 +588,7 @@ function Badge({
   return (
     <span
       className={`inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors ${
-        variant === "secondary"
-          ? "bg-secondary text-secondary-foreground"
-          : "bg-primary text-primary-foreground"
+        variant === "secondary" ?"bg-secondary text-secondary-foreground" :"bg-primary text-primary-foreground"
       } ${className || ""}`}
     >
       {children}

@@ -16,10 +16,9 @@ export function DashboardLoading() {
         <Skeleton className="h-8 w-48" />
         <Skeleton className="h-4 w-96" />
       </div>
-
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {Array.from({ length: 4 }).map((_, i) => (
+        {Array.from({ length: 4 })?.map((_, i) => (
           <Card key={i}>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <Skeleton className="h-4 w-24" />
@@ -32,7 +31,6 @@ export function DashboardLoading() {
           </Card>
         ))}
       </div>
-
       {/* Recent Activity */}
       <Card>
         <CardHeader>
@@ -40,7 +38,7 @@ export function DashboardLoading() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {Array.from({ length: 5 }).map((_, i) => (
+            {Array.from({ length: 5 })?.map((_, i) => (
               <div
                 key={i}
                 className="flex items-center justify-between border-b pb-4 last:border-0 last:pb-0"

@@ -2,22 +2,7 @@
 
 import { useState, useEffect, useTransition } from "react";
 import { useRouter, useParams } from "next/navigation";
-import {
-  ArrowLeft,
-  MailOpen,
-  Archive,
-  Trash2,
-  ExternalLink,
-  Clock,
-  User,
-  Tag,
-  FileText,
-  CheckCircle2,
-  AlertCircle,
-  RotateCw,
-  Send,
-  Loader2,
-} from "lucide-react";
+import { ArrowLeft, MailOpen, Archive, Trash2, ExternalLink, User, FileText, CheckCircle2, AlertCircle, RotateCw, Send, Loader2,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";

@@ -1,30 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useTransition } from "react";
-import {
-  Settings,
-  Bot,
-  Server,
-  Hash,
-  Shield,
-  Webhook,
-  Zap,
-  ExternalLink,
-  Save,
-  Loader2,
-  RefreshCw,
-  Activity,
-  Clock,
-  Wifi,
-  WifiOff,
-  AlertCircle,
-  CheckCircle2,
-  Copy,
-  Eye,
-  EyeOff,
-  TestTube,
-  FileText,
-} from "lucide-react";
+import { Settings, Bot, Server, Hash, Shield, Webhook, Zap, ExternalLink, Save, Loader2, RefreshCw, Activity, Clock, Wifi, WifiOff, AlertCircle, CheckCircle2, Eye, EyeOff, TestTube, FileText,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -38,16 +15,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@gameverse/ui/card";
-import { Separator } from "@gameverse/ui/separator";
+
 import { Skeleton } from "@gameverse/ui/skeleton";
-import { Switch } from "@gameverse/ui/switch";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@gameverse/ui/select";
+
+import {  } from "@gameverse/ui/select";
 
 import {
   getDiscordConfig,
@@ -92,7 +63,7 @@ export default function DiscordSettingsPage() {
   const fetchConfig = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getDiscordConfig();
+      let result = await getDiscordConfig();
       if (result.success && result.data) {
         const data = result.data as DiscordConfig;
         setConfig(data);
@@ -110,14 +81,14 @@ export default function DiscordSettingsPage() {
   }, []);
 
   const fetchStats = useCallback(async () => {
-    const result = await getDiscordStats();
+    let result = await getDiscordStats();
     if (result.success && result.data) {
       setStats(result.data as DiscordIntegrationStats);
     }
   }, []);
 
   const fetchBotStatus = useCallback(async () => {
-    const result = await getBotStatus();
+    let result = await getBotStatus();
     if (result.success && result.data) {
       setBotStatus(result.data as BotStatusInfo);
     }
@@ -208,7 +179,7 @@ export default function DiscordSettingsPage() {
     setSuccessMessage("");
     setErrorMessage("");
     try {
-      const result = await testDiscordWebhook("test");
+      let result = await testDiscordWebhook("test");
       if (result.success) {
         setSuccessMessage("Test webhook sent successfully");
       } else {

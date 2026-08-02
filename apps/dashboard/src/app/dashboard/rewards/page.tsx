@@ -3,12 +3,7 @@
 import { useState, useEffect, useTransition } from "react";
 import { motion } from "framer-motion";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent,  } from "@gameverse/ui/card";
 import { Badge } from "@gameverse/ui/badge";
 import { Button } from "@gameverse/ui/button";
 import { Skeleton } from "@gameverse/ui/skeleton";
@@ -181,8 +176,7 @@ export default function RewardsPage() {
                                   variant="outline"
                                   className={`text-xs ${
                                     inStock
-                                      ? "text-green-600 border-green-600/30"
-                                      : "text-red-600 border-red-600/30"
+                                      ? "text-green-600 border-green-600/30" :"text-red-600 border-red-600/30"
                                   }`}
                                 >
                                   {inStock
@@ -222,8 +216,7 @@ export default function RewardsPage() {
                                 {!canAfford
                                   ? "Not enough points"
                                   : !inStock
-                                  ? "Out of stock"
-                                  : "Redeem"}
+                                  ? "Out of stock" :"Redeem"}
                               </Button>
                             </div>
                           </div>

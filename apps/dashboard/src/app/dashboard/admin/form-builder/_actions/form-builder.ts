@@ -1,7 +1,7 @@
 "use server";
 
-import { requireAuth, requireAdmin, AuthError } from "@/lib/auth";
-import { checkMutationRateLimit, checkReadRateLimit, checkStrictRateLimit } from "@/lib/rate-limit";
+import { requireAuth, requireAdmin } from "@/lib/auth";
+import { checkMutationRateLimit, checkStrictRateLimit } from "@/lib/rate-limit";
 import { handleActionError, ok, type ActionResult } from "@/lib/errors";
 import { formRepository, eventRepository } from "@gameverse/database";
 import {

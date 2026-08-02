@@ -66,8 +66,7 @@ services:
     image: nginx:alpine
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80" -"443:443"
     volumes:
       - ./deploy/nginx/production.conf:/etc/nginx/nginx.conf:ro
       - ./deploy/nginx/ssl:/etc/nginx/ssl:ro

@@ -46,17 +46,7 @@ export interface ErrorDetail {
 // =====================================================
 
 export type ErrorCode =
-  | "UNAUTHORIZED"
-  | "FORBIDDEN"
-  | "NOT_FOUND"
-  | "VALIDATION_ERROR"
-  | "CONFLICT"
-  | "RATE_LIMITED"
-  | "INTERNAL_ERROR"
-  | "INVALID_CREDENTIALS"
-  | "ACCOUNT_SUSPENDED"
-  | "EMAIL_NOT_VERIFIED"
-  | "GUILD_MEMBERSHIP_REQUIRED";
+  | "UNAUTHORIZED" |"FORBIDDEN" |"NOT_FOUND" |"VALIDATION_ERROR" |"CONFLICT" |"RATE_LIMITED" |"INTERNAL_ERROR" |"INVALID_CREDENTIALS" |"ACCOUNT_SUSPENDED" |"EMAIL_NOT_VERIFIED" |"GUILD_MEMBERSHIP_REQUIRED";
 
 // =====================================================
 // Pagination Parameters

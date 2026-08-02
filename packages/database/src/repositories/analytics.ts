@@ -43,7 +43,7 @@ export class AnalyticsRepository {
       rejectedRegistrations,
       waitlistedRegistrations,
       totalUsers,
-      [webhookCount, automationCount, failedWebhookCount],
+      webhookStats,
     ] = await Promise.all([
       prisma.festival.findFirst({
         where: { isActive: true, isDeleted: false },
@@ -72,6 +72,8 @@ export class AnalyticsRepository {
         }),
       ]),
     ]);
+
+    const [webhookCount, automationCount, failedWebhookCount] = webhookStats;
 
     return {
       activeFestival: activeFestival ? {

@@ -2,28 +2,11 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Settings,
-  Trash2,
-  RefreshCw,
-  CheckCircle2,
-  XCircle,
-  Tag,
-  Hash,
-  Calendar,
-  Activity,
-} from "lucide-react";
+import { ArrowLeft, Settings, Trash2, CheckCircle2, XCircle, Tag, Hash, Calendar, Activity,  } from "lucide-react";
 
 import { Button } from "@gameverse/ui/button";
 import { Badge } from "@gameverse/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@gameverse/ui/card";
+import { Card, CardContent, CardHeader, CardTitle,  } from "@gameverse/ui/card";
 import { Separator } from "@gameverse/ui/separator";
 import { Skeleton } from "@gameverse/ui/skeleton";
 
@@ -195,8 +178,7 @@ export default function CategoryDetailPage({
                   variant={category.isActive ? "default" : "secondary"}
                   className={
                     category.isActive
-                      ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                      : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
+                      ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100" :"bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
                   }
                 >
                   {category.isActive ? "Active" : "Inactive"}

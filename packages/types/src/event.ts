@@ -3,12 +3,7 @@
 // =====================================================
 
 export type EventStatus =
-  | "DRAFT"
-  | "PUBLISHED"
-  | "LIVE"
-  | "COMPLETED"
-  | "CANCELLED"
-  | "ARCHIVED";
+  | "DRAFT" |"PUBLISHED" |"LIVE" |"COMPLETED" |"CANCELLED" |"ARCHIVED";
 
 export type EventVisibility = "PUBLIC" | "MEMBERS_ONLY" | "HIDDEN";
 
