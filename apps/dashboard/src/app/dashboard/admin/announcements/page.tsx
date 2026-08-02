@@ -114,8 +114,8 @@ export default function AnnouncementsPage() {
       let result = await getAnnouncements({
         search: filters.search || undefined,
         status: filters.status === "ALL" ? undefined : filters.status as "DRAFT" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined,
-        priority: filters.priority === "ALL" ? undefined : filters.priority as "LOW" | "MEDIUM" | "HIGH" | "URGENT" | undefined,
-        visibility: filters.visibility === "ALL" ? undefined : filters.visibility as "PUBLIC" | "REGISTERED" | "APPROVED" | undefined,
+        priority: filters.priority === "ALL" ? undefined : filters.priority as "LOW" | "NORMAL" | "HIGH" | "URGENT" | undefined,
+        visibility: filters.visibility === "ALL" ? undefined : filters.visibility as "PUBLIC" | "MEMBERS_ONLY" | "ADMINS_ONLY" | undefined,
         festivalId: filters.festivalId === "ALL" ? undefined : filters.festivalId,
         dateFrom: filters.dateFrom || undefined,
         dateTo: filters.dateTo || undefined,
