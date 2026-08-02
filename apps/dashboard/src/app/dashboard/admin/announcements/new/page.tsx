@@ -551,9 +551,7 @@ function Badge({
   return (
     <span
       className={`inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors ${
-        variant === "secondary"
-          ? "bg-secondary text-secondary-foreground"
-          : "bg-primary text-primary-foreground"
+        variant === "secondary" ?"bg-secondary text-secondary-foreground" :"bg-primary text-primary-foreground"
       } ${className || ""}`}
     >
       {children}

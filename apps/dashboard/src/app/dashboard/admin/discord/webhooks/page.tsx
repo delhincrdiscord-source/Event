@@ -1,23 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useTransition } from "react";
-import {
-  Webhook,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Trash2,
-  Edit,
-  TestTube,
-  ChevronLeft,
-  ChevronRight,
-  CheckCircle2,
-  XCircle,
-  Loader2,
-  RefreshCw,
-  ExternalLink,
-  Clock,
-} from "lucide-react";
+import { Webhook, Plus, Search, MoreHorizontal, Trash2, TestTube, ChevronLeft, ChevronRight, CheckCircle2, XCircle, Loader2, RefreshCw, Clock,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -265,8 +249,7 @@ export default function WebhooksPage() {
               </h3>
               <p className="text-sm text-muted-foreground">
                 {searchQuery
-                  ? "Try adjusting your search"
-                  : "Create your first webhook to get started"}
+                  ? "Try adjusting your search" :"Create your first webhook to get started"}
               </p>
               {!searchQuery && (
                 <Button
@@ -316,8 +299,7 @@ export default function WebhooksPage() {
                           variant="outline"
                           className={
                             webhook.isActive
-                              ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                              : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
+                              ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100" :"bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
                           }
                         >
                           {webhook.isActive ? "Active" : "Inactive"}

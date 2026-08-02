@@ -36,7 +36,7 @@ export function decrypt(ciphertext: string): string {
 
   const ivHex = parts[0]!;
   const tagHex = parts[1]!;
-  const encrypted = parts[2]!;
+  let encrypted = parts[2]!;
   const iv = Buffer.from(ivHex, "hex");
   const tag = Buffer.from(tagHex, "hex");
   const decipher = createDecipheriv(ALGORITHM, key, iv);

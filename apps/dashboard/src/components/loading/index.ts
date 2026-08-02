@@ -1,4 +1,4 @@
-export { DashboardLoading } from "./dashboard-loading";
-export { SidebarLoading } from "./sidebar-loading";
-export { TopNavLoading } from "./top-nav-loading";
-export { ShellLoading } from "./shell-loading";
+export * from "./dashboard-loading";
+export * from "./sidebar-loading";
+export * from "./top-nav-loading";
+export * from "./shell-loading";

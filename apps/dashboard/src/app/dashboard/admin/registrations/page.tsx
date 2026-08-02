@@ -39,19 +39,7 @@ import { Skeleton } from "@gameverse/ui/skeleton";
 import { Separator } from "@gameverse/ui/separator";
 import { Checkbox } from "@gameverse/ui/checkbox";
 
-import {
-  getRegistrations,
-  getRegistrationStats,
-  approveRegistration,
-  rejectRegistration,
-  waitlistRegistration,
-  cancelRegistration,
-  checkInRegistration,
-  bulkUpdateRegistrationStatus,
-  bulkCheckInRegistrations,
-  exportRegistrations,
-  deleteRegistration,
-} from "./_actions/registration";
+import { getRegistrations, getRegistrationStats, approveRegistration, rejectRegistration, waitlistRegistration, bulkUpdateRegistrationStatus, bulkCheckInRegistrations, exportRegistrations, deleteRegistration,  } from "./_actions/registration";
 import { getEvents } from "../events/_actions/event";
 import { getAllFestivals } from "../festivals/_actions/festival";
 import { ApprovalDialog } from "./_components";
@@ -111,7 +99,7 @@ export default function RegistrationsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    status: "ALL" as RegistrationStatus | "ALL",
+    status: "ALL\" as RegistrationStatus | \"ALL",
     eventId: "ALL",
     festivalId: "ALL",
     dateFrom: "",
@@ -129,7 +117,7 @@ export default function RegistrationsPage() {
   const fetchRegistrations = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getRegistrations({
+      let result = await getRegistrations({
         search: filters.search || undefined,
         status: filters.status === "ALL" ? undefined : filters.status,
         eventId: filters.eventId === "ALL" ? undefined : filters.eventId,
@@ -157,14 +145,14 @@ export default function RegistrationsPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getRegistrationStats();
+    let result = await getRegistrationStats();
     if (result.success && result.data) {
       setStats(result.data as RegistrationStats);
     }
   }, []);
 
   const fetchEvents = useCallback(async () => {
-    const result = await getEvents({
+    let result = await getEvents({
       page: 1,
       perPage: 100,
       sortBy: "startDate",
@@ -176,7 +164,7 @@ export default function RegistrationsPage() {
   }, []);
 
   const fetchFestivals = useCallback(async () => {
-    const result = await getAllFestivals();
+    let result = await getAllFestivals();
     if (result.success && result.data) {
       setFestivals(result.data);
     }
@@ -333,7 +321,7 @@ export default function RegistrationsPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteRegistration(id);
+      let result = await deleteRegistration(id);
       if (result.success) {
         fetchRegistrations();
         fetchStats();
@@ -618,8 +606,7 @@ export default function RegistrationsPage() {
                   filters.festivalId !== "ALL" ||
                   filters.dateFrom ||
                   filters.dateTo
-                    ? "Try adjusting your search or filter criteria"
-                    : "Registrations will appear here once users register for events"}
+                    ? "Try adjusting your search or filter criteria" :"Registrations will appear here once users register for events"}
                 </p>
               </div>
             ) : (

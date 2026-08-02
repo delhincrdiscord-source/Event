@@ -82,9 +82,7 @@ export default function RegistrationSettingsPage() {
       {message && (
         <div
           className={`p-3 rounded-md mb-4 ${
-            message.type === "success"
-              ? "bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-200"
-              : "bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-200"
+            message.type === "success" ?"bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-200" :"bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-200"
           }`}
         >
           {message.text}

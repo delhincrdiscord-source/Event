@@ -3,13 +3,7 @@
 // =====================================================
 
 export type RegistrationStatus =
-  | "PENDING"
-  | "APPROVED"
-  | "REJECTED"
-  | "WAITLISTED"
-  | "CANCELLED"
-  | "CHECKED_IN"
-  | "COMPLETED";
+  | "PENDING" |"APPROVED" |"REJECTED" |"WAITLISTED" |"CANCELLED" |"CHECKED_IN" |"COMPLETED";
 
 export interface Registration {
   id: string;

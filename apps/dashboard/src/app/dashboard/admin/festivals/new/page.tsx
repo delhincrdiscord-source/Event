@@ -7,7 +7,7 @@ export default function NewFestivalPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/dashboard/festivals/new/edit");
+    router?.replace("/dashboard/festivals/new/edit");
   }, [router]);
 
   return null;

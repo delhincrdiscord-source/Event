@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, Filter, X } from "lucide-react";
+import { Filter, X } from "lucide-react";
 import { Button } from "@gameverse/ui/button";
 import { Input } from "@gameverse/ui/input";
 import { Label } from "@gameverse/ui/label";

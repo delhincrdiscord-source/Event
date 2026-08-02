@@ -1,18 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import {
-  BarChart3,
-  Calendar,
-  Users,
-  Bell,
-  MessageSquare,
-  Activity,
-  TrendingUp,
-  CheckCircle2,
-  Clock,
-  AlertCircle,
-} from "lucide-react";
+import { BarChart3, Calendar, Users, Bell, MessageSquare, Activity, CheckCircle2, Clock, AlertCircle,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@gameverse/ui/button";
 import { Skeleton } from "@gameverse/ui/skeleton";
@@ -182,8 +171,7 @@ export default function AnalyticsDashboard() {
                 icon={MessageSquare}
                 className={
                   data.overview.discordStatus.botOnline
-                    ? "border-green-200"
-                    : "border-red-200"
+                    ? "border-green-200" :"border-red-200"
                 }
               />
               <StatCard
@@ -205,8 +193,7 @@ export default function AnalyticsDashboard() {
                 icon={AlertCircle}
                 className={
                   data.overview.discordStatus.webhookFailures > 0
-                    ? "border-red-200"
-                    : ""
+                    ? "border-red-200" :""
                 }
               />
             </div>

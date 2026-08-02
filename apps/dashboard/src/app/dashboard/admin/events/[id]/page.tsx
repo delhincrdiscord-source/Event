@@ -2,23 +2,7 @@
 
 import { useState, useEffect, useCallback, use, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Edit,
-  Trash2,
-  Globe,
-  ArrowUpFromLine,
-  Archive,
-  Calendar,
-  Clock,
-  MapPin,
-  MessageSquare,
-  Users,
-  Settings,
-  Image,
-  ExternalLink,
-  Loader2,
-} from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Globe, ArrowUpFromLine, Archive, Calendar, Clock, MapPin, MessageSquare, Users, Settings, Image, ExternalLink,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -44,7 +28,7 @@ import {
   DeleteEventDialog,
   PublishEventDialog,
 } from "../_components";
-import type { CommunityEventWithRelations, EventStatus } from "@gameverse/types";
+import type { CommunityEventWithRelations } from "@gameverse/types";
 import {
   EVENT_STATUS_LABELS,
   EVENT_STATUS_COLORS,

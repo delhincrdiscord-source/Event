@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { MessageSquare, Trash2, Lock, Globe, Loader2 } from "lucide-react";
+import { MessageSquare, Lock, Globe, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";

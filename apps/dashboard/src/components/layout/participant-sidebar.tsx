@@ -96,8 +96,7 @@ export function ParticipantSidebar({ collapsed = false, onToggle, userRole }: Pa
                 className={cn(
                   "group relative flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   pathname.startsWith("/dashboard/admin")
-                    ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                    : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                    ? "bg-sidebar-accent text-sidebar-accent-foreground" :"text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 )}
               >
                 <Shield className={cn("h-4 w-4 shrink-0", pathname.startsWith("/dashboard/admin") && "text-primary")} />

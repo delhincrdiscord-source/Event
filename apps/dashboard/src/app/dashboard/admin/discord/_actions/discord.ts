@@ -1,9 +1,9 @@
 "use server";
 
-import { requireAuth, requireAdmin, AuthError } from "@/lib/auth";
+import { requireAuth, requireAdmin } from "@/lib/auth";
 import { checkMutationRateLimit, checkReadRateLimit } from "@/lib/rate-limit";
 import { createErrorResponse, handleActionError, ok, type ActionResult } from "@/lib/errors";
-import { encrypt, decrypt, isEncrypted } from "@/lib/encryption";
+import { encrypt } from "@/lib/encryption";
 import { writeAuditLog } from "@/lib/audit";
 import { discordRepository } from "@gameverse/database";
 import { prisma } from "@gameverse/database";

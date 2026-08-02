@@ -25,9 +25,7 @@ BACKUP_DIR="$ROOT_DIR/backups"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/gameverse_${TIMESTAMP}.sql.gz"
 
-mkdir -p "$BACKUP_DIR"
-
-echo "[$(date)] Starting database backup..."
+mkdir -p "$BACKUP_DIR" echo"[$(date)] Starting database backup..."
 
 # Extract connection details from DATABASE_URL
 # Format: postgresql://user:password@host:port/dbname
@@ -37,11 +35,7 @@ DB_NAME=$(echo "$DATABASE_URL" | sed -n 's|.*/\([^?]*\).*|\1|p')
 DB_USER=$(echo "$DATABASE_URL" | sed -n 's|://\([^:]*\):.*|\1|p')
 DB_PASS=$(echo "$DATABASE_URL" | sed -n 's|://[^:]*:\([^@]*\)@.*|\1|p')
 
-PGPASSWORD="$DB_PASS" pg_dump \
-    -h "$DB_HOST" \
-    -p "$DB_PORT" \
-    -U "$DB_USER" \
-    -d "$DB_NAME" \
+PGPASSWORD="$DB_PASS"pg_dump -h"$DB_HOST" -p"$DB_PORT" -U"$DB_USER" -d"$DB_NAME" \
     --no-owner \
     --no-privileges \
     | gzip > "$BACKUP_FILE"

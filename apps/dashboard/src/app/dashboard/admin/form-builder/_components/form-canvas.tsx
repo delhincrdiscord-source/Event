@@ -1,40 +1,11 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import {
-  GripVertical,
-  Pencil,
-  Copy,
-  Trash2,
-  Type,
-  AlignLeft,
-  Mail,
-  Hash,
-  Phone,
-  MessageSquare,
-  Gamepad2,
-  User,
-  ChevronDown,
-  CheckSquare,
-  Check,
-  Circle,
-  Calendar,
-  Clock,
-  Globe,
-  Upload,
-  Link,
-  Heading,
-  Minus,
-  FileText,
-  Plus,
-} from "lucide-react";
+import { GripVertical, Copy, Trash2, Type, AlignLeft, Mail, Hash, Phone, MessageSquare, Gamepad2, User, ChevronDown, CheckSquare, Check, Circle, Calendar, Clock, Globe, Upload, Link, Heading, Minus, FileText, Plus,  } from "lucide-react";
 
 import { Badge } from "@gameverse/ui/badge";
-import { Button } from "@gameverse/ui/button";
-import {
-  Card,
-  CardContent,
-} from "@gameverse/ui/card";
+
+import {  } from "@gameverse/ui/card";
 import {
   FORM_FIELD_TYPE_LABELS,
   FORM_FIELD_TYPE_ICONS,
@@ -268,8 +239,7 @@ export function FormCanvas({
                   }}
                   className={`rounded p-1 ${
                     deleteConfirmId === field.id
-                      ? "bg-red-100 text-red-600"
-                      : "text-[var(--ds-gray-400)] hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20"
+                      ? "bg-red-100 text-red-600" :"text-[var(--ds-gray-400)] hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20"
                   }`}
                 >
                   <Trash2 className="h-3.5 w-3.5" />

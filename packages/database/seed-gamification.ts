@@ -40,68 +40,68 @@ async function main() {
 
   // Achievements
   for (const a of ACHIEVEMENTS) {
-    await prisma.achievement.upsert({
-      where: { name: a.name },
+    await prisma?.achievement?.upsert({
+      where: { name: a?.name },
       update: {},
       create: a,
     });
   }
-  console.log(`  Created ${ACHIEVEMENTS.length} achievements`);
+  console.log(`  Created ${ACHIEVEMENTS?.length} achievements`);
 
   // Badges
   for (const b of BADGES) {
-    await prisma.badge.upsert({
-      where: { name: b.name },
+    await prisma?.badge?.upsert({
+      where: { name: b?.name },
       update: {},
       create: b,
     });
   }
-  console.log(`  Created ${BADGES.length} badges`);
+  console.log(`  Created ${BADGES?.length} badges`);
 
   // Rewards
   for (const r of REWARDS) {
-    await prisma.reward.upsert({
-      where: { name: r.name },
+    await prisma?.reward?.upsert({
+      where: { name: r?.name },
       update: {},
       create: r,
     });
   }
-  console.log(`  Created ${REWARDS.length} rewards`);
+  console.log(`  Created ${REWARDS?.length} rewards`);
 
   // Give admin user some starter points and badges
-  const admin = await prisma.user.findUnique({ where: { email: "admin@delhincr.fun" } });
+  const admin = await prisma?.user?.findUnique({ where: { email: "admin@delhincr.fun" } });
   if (admin) {
     // Points
-    const existingPoints = await prisma.userPoints.findFirst({ where: { userId: admin.id } });
+    const existingPoints = await prisma?.userPoints?.findFirst({ where: { userId: admin?.id } });
     if (!existingPoints) {
-      await prisma.userPoints.createMany({
+      await prisma?.userPoints?.createMany({
         data: [
-          { userId: admin.id, points: 200, source: "seed", reason: "Welcome bonus" },
-          { userId: admin.id, points: 100, source: "seed", reason: "Early adopter" },
-          { userId: admin.id, points: 545, source: "seed", reason: "Achievement rewards" },
+          { userId: admin?.id, points: 200, source: "seed", reason: "Welcome bonus" },
+          { userId: admin?.id, points: 100, source: "seed", reason: "Early adopter" },
+          { userId: admin?.id, points: 545, source: "seed", reason: "Achievement rewards" },
         ],
       });
       console.log("  Given admin user 845 points");
     }
 
     // Badges
-    const first3Badges = await prisma.badge.findMany({ take: 3 });
+    const first3Badges = await prisma?.badge?.findMany({ take: 3 });
     for (const badge of first3Badges) {
-      await prisma.userBadge.upsert({
-        where: { userId_badgeId: { userId: admin.id, badgeId: badge.id } },
+      await prisma?.userBadge?.upsert({
+        where: { userId_badgeId: { userId: admin?.id, badgeId: badge?.id } },
         update: {},
-        create: { userId: admin.id, badgeId: badge.id },
+        create: { userId: admin?.id, badgeId: badge?.id },
       });
     }
     console.log("  Given admin user 3 badges");
 
     // Achievements
-    const first3Achievements = await prisma.achievement.findMany({ take: 3 });
+    const first3Achievements = await prisma?.achievement?.findMany({ take: 3 });
     for (const ach of first3Achievements) {
-      await prisma.userAchievement.upsert({
-        where: { userId_achievementId: { userId: admin.id, achievementId: ach.id } },
+      await prisma?.userAchievement?.upsert({
+        where: { userId_achievementId: { userId: admin?.id, achievementId: ach?.id } },
         update: {},
-        create: { userId: admin.id, achievementId: ach.id },
+        create: { userId: admin?.id, achievementId: ach?.id },
       });
     }
     console.log("  Given admin user 3 achievements");
@@ -110,11 +110,9 @@ async function main() {
   console.log("Gamification seeding complete!");
 }
 
-main()
-  .catch((e) => {
+main()?.catch((e) => {
     console.error("Seed failed:", e);
     process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
+  })?.finally(async () => {
+    await prisma?.$disconnect();
   });

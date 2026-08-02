@@ -23,10 +23,7 @@ import {
   FileText,
 } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-} from "@gameverse/ui/card";
+import {  } from "@gameverse/ui/card";
 import {
   INPUT_FIELD_TYPES,
   CHOICE_FIELD_TYPES,

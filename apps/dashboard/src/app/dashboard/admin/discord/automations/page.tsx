@@ -1,21 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useTransition } from "react";
-import {
-  Zap,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Trash2,
-  Edit,
-  Clock,
-  Loader2,
-  RefreshCw,
-  ToggleLeft,
-  ToggleRight,
-  Hash,
-  Bell,
-} from "lucide-react";
+import { Zap, Plus, Search, MoreHorizontal, Trash2, Loader2, ToggleLeft, ToggleRight, Bell,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -84,8 +70,8 @@ export default function AutomationsPage() {
   const [createForm, setCreateForm] = useState({
     name: "",
     description: "",
-    trigger: "" as AutomationTrigger | "",
-    action: "" as AutomationAction | "",
+    trigger: "\" as AutomationTrigger | \"",
+    action: "\" as AutomationAction | \"",
     channelId: "",
     roleId: "",
     messageTemplate: "",
@@ -242,8 +228,7 @@ export default function AutomationsPage() {
               </h3>
               <p className="text-sm text-muted-foreground">
                 {searchQuery
-                  ? "Try adjusting your search"
-                  : "Create your first automation to get started"}
+                  ? "Try adjusting your search" :"Create your first automation to get started"}
               </p>
               {!searchQuery && (
                 <Button
@@ -343,8 +328,7 @@ export default function AutomationsPage() {
                                 <ToggleRight className="mr-2 h-4 w-4" />
                               )}
                               {automation.isActive
-                                ? "Deactivate"
-                                : "Activate"}
+                                ? "Deactivate" :"Activate"}
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem

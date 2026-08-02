@@ -338,9 +338,7 @@ export class EventRepository {
     excludeEventId?: string
   ): Promise<ConflictCheck> {
     const channelField =
-      channelType === "voice"
-        ? "discordVoiceChannelId"
-        : "discordStageChannelId";
+      channelType === "voice" ?"discordVoiceChannelId" :"discordStageChannelId";
 
     const conflictingEvents = await prisma.communityEvent.findMany({
       where: {
@@ -566,12 +564,7 @@ export class EventRepository {
   async bulkUpdateStatus(
     ids: string[],
     status:
-      | "DRAFT"
-      | "PUBLISHED"
-      | "LIVE"
-      | "COMPLETED"
-      | "CANCELLED"
-      | "ARCHIVED"
+      | "DRAFT" |"PUBLISHED" |"LIVE" |"COMPLETED" |"CANCELLED" |"ARCHIVED"
   ): Promise<void> {
     await prisma.communityEvent.updateMany({
       where: {

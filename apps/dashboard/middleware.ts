@@ -32,8 +32,7 @@ export function middleware(request: NextRequest) {
 
   // Public paths — always allow
   if (
-    pathname === "/login" ||
-    pathname.startsWith("/api/") ||
+    pathname === "/login" || pathname.startsWith("/api/") ||
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/favicon") ||
     pathname === "/logo.gif" ||

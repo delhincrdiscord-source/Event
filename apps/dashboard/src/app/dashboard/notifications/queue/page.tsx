@@ -1,18 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useTransition } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  RefreshCw,
-  Send,
-  Clock,
-  AlertCircle,
-  RotateCw,
-  Inbox,
-  MoreHorizontal,
-  ExternalLink,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, RefreshCw, Send, Clock, AlertCircle, RotateCw, Inbox,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -24,12 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@gameverse/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@gameverse/ui/dropdown-menu";
+import {  } from "@gameverse/ui/dropdown-menu";
 import {
   Select,
   SelectContent,
@@ -96,8 +80,8 @@ export default function NotificationQueuePage() {
     totalPages: 0,
   });
   const [filters, setFilters] = useState({
-    status: "ALL" as DeliveryStatus | "ALL",
-    channel: "ALL" as NotificationChannel | "ALL",
+    status: "ALL\" as DeliveryStatus | \"ALL",
+    channel: "ALL\" as NotificationChannel | \"ALL",
   });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -321,9 +305,7 @@ export default function NotificationQueuePage() {
                   No queue items found
                 </h3>
                 <p className="text-sm text-[#4d4d4d]">
-                  {filters.status !== "ALL" || filters.channel !== "ALL"
-                    ? "Try adjusting your filter criteria"
-                    : "The notification delivery queue is empty"}
+                  {filters.status !== "ALL"|| filters.channel !== "ALL" ?"Try adjusting your filter criteria" :"The notification delivery queue is empty"}
                 </p>
               </div>
             ) : (

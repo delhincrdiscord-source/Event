@@ -1,17 +1,5 @@
 import { prisma } from "@gameverse/database";
-import type {
-  FormFieldConfig,
-  FormFieldListItem,
-  FormVersion,
-  FormVersionListItem,
-  FormResponse,
-  FormResponseWithField,
-  FormSubmission,
-  FormStats,
-  PaginatedFormResponses,
-  CreateFormFieldInput,
-  UpdateFormFieldInput,
-} from "@gameverse/types";
+import type { FormFieldConfig, FormVersion, FormVersionListItem, FormResponse, FormResponseWithField, FormSubmission, FormStats, PaginatedFormResponses, CreateFormFieldInput, UpdateFormFieldInput,  } from "@gameverse/types";
 
 // =====================================================
 // Form Builder Repository
@@ -472,10 +460,10 @@ export class FormRepository {
     }
 
     const rows = Array.from(submissionMap.entries()).map(
-      ([key, { submittedAt, values }], index) => [
+      ([key, submission], index) => [
         `SUB-${String(index + 1).padStart(4, "0")}`,
-        submittedAt.toISOString(),
-        ...fields.map((f: { fieldName: string }) => values.get(f.fieldName) ?? ""),
+        submission.submittedAt.toISOString(),
+        ...fields.map((f: { fieldName: string }) => submission.values.get(f.fieldName) ?? ""),
       ]
     );
 

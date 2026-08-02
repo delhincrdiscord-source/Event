@@ -2,25 +2,7 @@
 
 import { useState, useEffect, useCallback, use, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Edit,
-  Trash2,
-  Globe,
-  Archive,
-  Clock,
-  Eye,
-  Tag,
-  Pin,
-  Calendar,
-  User,
-  Megaphone,
-  Settings,
-  Image,
-  Copy,
-  ExternalLink,
-  Loader2,
-} from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Globe, Archive, Clock, Eye, Tag, Pin, Calendar, User, Megaphone, Settings, Image, Copy, ExternalLink,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";

@@ -2,24 +2,14 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Save,
-  Loader2,
-  Calendar,
-  MessageSquare,
-  Users,
-  Settings,
-  Globe,
-  Image,
-} from "lucide-react";
+import { ArrowLeft, Save, Loader2, Calendar, MessageSquare, Users, Settings, Image,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
 import { Input } from "@gameverse/ui/input";
 import { Label } from "@gameverse/ui/label";
 import { Textarea } from "@gameverse/ui/textarea";
-import { Badge } from "@gameverse/ui/badge";
+
 import {
   Card,
   CardContent,
@@ -35,7 +25,7 @@ import {
   SelectValue,
 } from "@gameverse/ui/select";
 import { Switch } from "@gameverse/ui/switch";
-import { Separator } from "@gameverse/ui/separator";
+
 
 import { createEvent } from "../_actions/event";
 import { getAllCategories } from "../../categories/_actions/category";

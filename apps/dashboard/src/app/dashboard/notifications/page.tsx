@@ -2,24 +2,7 @@
 
 import { useState, useEffect, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Bell,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Archive,
-  Trash2,
-  Eye,
-  MailOpen,
-  CheckCheck,
-  Filter,
-  CalendarDays,
-  Inbox,
-  Mail,
-  ArchiveIcon,
-} from "lucide-react";
+import { Bell, ChevronLeft, ChevronRight, Plus, Search, MoreHorizontal, Archive, Trash2, Eye, MailOpen, CheckCheck, Inbox, Mail, ArchiveIcon,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -60,12 +43,7 @@ import {
   bulkDeleteNotifications,
 } from "./_actions/notification";
 import { DeleteNotificationDialog } from "./_components";
-import type {
-  NotificationListItem,
-  NotificationType,
-  NotificationStats,
-  PaginatedNotifications,
-} from "@gameverse/types";
+import type { NotificationListItem, NotificationType, NotificationStats,  } from "@gameverse/types";
 import {
   NOTIFICATION_TYPE_LABELS,
   NOTIFICATION_TYPE_COLORS,
@@ -102,8 +80,8 @@ export default function NotificationsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    type: "ALL" as NotificationType | "ALL",
-    readFilter: "ALL" as "ALL" | "READ" | "UNREAD",
+    type: "ALL\" as NotificationType | \"ALL",
+    readFilter: "ALL\" as \"ALL\" | \"READ\" | \"UNREAD",
     dateFrom: "",
     dateTo: "",
   });
@@ -116,7 +94,7 @@ export default function NotificationsPage() {
   const fetchNotifications = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getNotifications({
+      let result = await getNotifications({
         search: filters.search || undefined,
         type: filters.type === "ALL" ? undefined : filters.type,
         isRead:
@@ -146,7 +124,7 @@ export default function NotificationsPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getNotificationStats();
+    let result = await getNotificationStats();
     if (result.success && result.data) {
       setStats(result.data as NotificationStats);
     }
@@ -243,7 +221,7 @@ export default function NotificationsPage() {
 
   const handleMarkAsRead = async (id: string) => {
     startTransition(async () => {
-      const result = await markAsRead(id);
+      let result = await markAsRead(id);
       if (result.success) {
         fetchNotifications();
         fetchStats();
@@ -253,7 +231,7 @@ export default function NotificationsPage() {
 
   const handleArchive = async (id: string) => {
     startTransition(async () => {
-      const result = await archiveNotification(id);
+      let result = await archiveNotification(id);
       if (result.success) {
         fetchNotifications();
         fetchStats();
@@ -263,7 +241,7 @@ export default function NotificationsPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteNotification(id);
+      let result = await deleteNotification(id);
       if (result.success) {
         setDeleteDialogOpen(false);
         setSelectedNotification(null);
@@ -515,8 +493,7 @@ export default function NotificationsPage() {
                   filters.readFilter !== "ALL" ||
                   filters.dateFrom ||
                   filters.dateTo
-                    ? "Try adjusting your search or filter criteria"
-                    : "Create your first notification to get started"}
+                    ? "Try adjusting your search or filter criteria" :"Create your first notification to get started"}
                 </p>
                 {!filters.search &&
                   filters.type === "ALL" &&

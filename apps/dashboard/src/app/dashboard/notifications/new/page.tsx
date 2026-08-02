@@ -2,13 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  ArrowLeft,
-  Bell,
-  Loader2,
-  Send,
-  Info,
-} from "lucide-react";
+import { ArrowLeft, Loader2, Send, Info,  } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@gameverse/ui/button";
@@ -29,11 +23,11 @@ import {
   SelectValue,
 } from "@gameverse/ui/select";
 import { Checkbox } from "@gameverse/ui/checkbox";
-import { Separator } from "@gameverse/ui/separator";
+
 
 import { createNotification } from "../_actions/notification";
 import type { NotificationType, NotificationChannel } from "@gameverse/types";
-import { NOTIFICATION_TYPE_LABELS } from "@gameverse/types";
+
 
 const TYPE_OPTIONS: { value: NotificationType; label: string }[] = [
   { value: "SYSTEM", label: "System" },
@@ -65,7 +59,7 @@ export default function CreateNotificationPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [form, setForm] = useState({
     userId: "",
-    type: "" as NotificationType | "",
+    type: "\" as NotificationType | \"",
     title: "",
     message: "",
     link: "",

@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useMediaQuery, useHotkey } from "@/lib/hooks";
 import { AdminSidebar } from "@/components/layout/admin-sidebar";

@@ -2,26 +2,7 @@
 
 import { useState, useEffect, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Calendar,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-  Search,
-  Filter,
-  MoreHorizontal,
-  Archive,
-  Trash2,
-  Copy,
-  Eye,
-  EyeOff,
-  RefreshCw,
-  CalendarDays,
-  Clock,
-  CheckCircle2,
-  XCircle,
-  FileText,
-} from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight, Plus, Search, Filter, MoreHorizontal, Archive, Trash2, Copy, Eye, RefreshCw, CalendarDays, Clock, CheckCircle2, FileText,  } from "lucide-react";
 
 import { Button } from "@gameverse/ui/button";
 import { Input } from "@gameverse/ui/input";
@@ -60,12 +41,7 @@ import {
   bulkArchiveFestivals,
   bulkUpdateFestivalStatus,
 } from "./_actions/festival";
-import type {
-  FestivalListItem,
-  FestivalStatus,
-  PaginatedFestivals,
-  FestivalStats,
-} from "@gameverse/types";
+import type { FestivalListItem, FestivalStatus, FestivalStats,  } from "@gameverse/types";
 
 const STATUS_OPTIONS: { value: FestivalStatus | "ALL"; label: string }[] = [
   { value: "ALL", label: "All Statuses" },
@@ -107,7 +83,7 @@ export default function FestivalsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    status: "ALL" as FestivalStatus | "ALL",
+    status: "ALL\" as FestivalStatus | \"ALL",
   });
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -115,9 +91,9 @@ export default function FestivalsPage() {
   const fetchFestivals = useCallback(async () => {
     setIsLoading(true);
     try {
-      const result = await getFestivals({
+      let result = await getFestivals({
         search: filters.search || undefined,
-        status: filters.status === "ALL" ? undefined : filters.status,
+        status: filters.status === "ALL" ? undefined : filters.status as "COMPLETED" | "DRAFT" | "ARCHIVED" | "UPCOMING" | "LIVE" | undefined,
         page: pagination.page,
         perPage: pagination.perPage,
         sortBy: "startDate",
@@ -137,7 +113,7 @@ export default function FestivalsPage() {
   }, [filters, pagination.page, pagination.perPage]);
 
   const fetchStats = useCallback(async () => {
-    const result = await getFestivalStats();
+    let result = await getFestivalStats();
     if (result.success && result.data) {
       setStats(result.data);
     }
@@ -194,10 +170,7 @@ export default function FestivalsPage() {
         case "archive":
           result = await bulkArchiveFestivals({ festivalIds: selectedIds });
           break;
-        case "DRAFT":
-        case "UPCOMING":
-        case "LIVE":
-        case "COMPLETED":
+        case "DRAFT": case"UPCOMING": case"LIVE": case"COMPLETED":
           result = await bulkUpdateFestivalStatus(selectedIds, action);
           break;
       }
@@ -212,7 +185,7 @@ export default function FestivalsPage() {
 
   const handleDelete = async (id: string) => {
     startTransition(async () => {
-      const result = await deleteFestival(id);
+      let result = await deleteFestival(id);
       if (result.success) {
         fetchFestivals();
         fetchStats();
@@ -222,7 +195,7 @@ export default function FestivalsPage() {
 
   const handleArchive = async (id: string) => {
     startTransition(async () => {
-      const result = await archiveFestival(id);
+      let result = await archiveFestival(id);
       if (result.success) {
         fetchFestivals();
         fetchStats();
@@ -232,7 +205,7 @@ export default function FestivalsPage() {
 
   const handleRestore = async (id: string) => {
     startTransition(async () => {
-      const result = await restoreFestival(id);
+      let result = await restoreFestival(id);
       if (result.success) {
         fetchFestivals();
         fetchStats();
@@ -409,9 +382,7 @@ export default function FestivalsPage() {
                 <Calendar className="h-12 w-12 text-muted-foreground" />
                 <h3 className="mt-4 text-lg font-semibold">No festivals found</h3>
                 <p className="text-sm text-muted-foreground">
-                  {filters.search || filters.status !== "ALL"
-                    ? "Try adjusting your search or filter criteria"
-                    : "Create your first festival to get started"}
+                  {filters.search || filters.status !== "ALL" ?"Try adjusting your search or filter criteria" :"Create your first festival to get started"}
                 </p>
                 {!filters.search && filters.status === "ALL" && (
                   <Button

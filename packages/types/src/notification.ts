@@ -3,14 +3,7 @@
 // =====================================================
 
 export type NotificationType =
-  | "SYSTEM"
-  | "ANNOUNCEMENT"
-  | "REGISTRATION"
-  | "APPROVAL"
-  | "REMINDER"
-  | "FESTIVAL"
-  | "EVENT"
-  | "CUSTOM";
+  | "SYSTEM" |"ANNOUNCEMENT" |"REGISTRATION" |"APPROVAL" |"REMINDER" |"FESTIVAL" |"EVENT" |"CUSTOM";
 
 export interface Notification {
   id: string;
