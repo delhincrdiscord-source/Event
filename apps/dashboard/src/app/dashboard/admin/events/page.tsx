@@ -138,7 +138,7 @@ export default function EventsPage() {
   });
   const [filters, setFilters] = useState({
     search: "",
-    status: "ALL\" as EventStatus | \"ALL",
+    status: "ALL",
     categoryId: "ALL",
     festivalId: "ALL",
   });
@@ -156,7 +156,7 @@ export default function EventsPage() {
     try {
       let result = await getEvents({
         search: filters.search || undefined,
-        status: filters.status === "ALL" ? undefined : filters.status,
+        status: filters.status === "ALL" ? undefined : filters.status as "CANCELLED" | "COMPLETED" | "DRAFT" | "PUBLISHED" | "ARCHIVED" | "LIVE" | undefined,
         categoryId: filters.categoryId === "ALL" ? undefined : filters.categoryId,
         festivalId: filters.festivalId === "ALL" ? undefined : filters.festivalId,
         page: pagination.page,

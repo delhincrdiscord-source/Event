@@ -102,7 +102,7 @@ export default function CategoriesPage() {
       let result = await getCategories({
         search: filters.search || undefined,
         sortBy: filters.sortBy as "name" | "createdAt" | "sortOrder",
-        sortOrder: filters.sortOrder,
+        sortOrder: filters.sortOrder as "asc" | "desc",
         page: pagination.page,
         perPage: pagination.perPage,
       });

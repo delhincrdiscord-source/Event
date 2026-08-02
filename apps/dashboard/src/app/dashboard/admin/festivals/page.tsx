@@ -93,7 +93,7 @@ export default function FestivalsPage() {
     try {
       let result = await getFestivals({
         search: filters.search || undefined,
-        status: filters.status === "ALL" ? undefined : filters.status,
+        status: filters.status === "ALL" ? undefined : filters.status as "COMPLETED" | "DRAFT" | "ARCHIVED" | "UPCOMING" | "LIVE" | undefined,
         page: pagination.page,
         perPage: pagination.perPage,
         sortBy: "startDate",
