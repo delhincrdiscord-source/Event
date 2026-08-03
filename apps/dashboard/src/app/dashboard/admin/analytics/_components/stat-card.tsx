@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@gameverse/ui/card";
 import { Skeleton } from "@gameverse/ui/skeleton";
 import type { LucideIcon } from "lucide-react";
-import type { ElementType, ComponentType } from "react";
+import type { ElementType, ComponentType, FC } from "react";
 
 interface StatCardProps {
   title: string;
