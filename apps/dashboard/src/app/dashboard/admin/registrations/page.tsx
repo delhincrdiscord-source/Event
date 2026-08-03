@@ -119,7 +119,7 @@ export default function RegistrationsPage() {
     try {
       let result = await getRegistrations({
         search: filters.search || undefined,
-        status: filters.status === "ALL" ? undefined : filters.status,
+        status: filters.status === "ALL" ? undefined : (filters.status as "COMPLETED" | "CANCELLED" | "PENDING" | "APPROVED" | "REJECTED" | "WAITLISTED" | "CHECKED_IN" | undefined),
         eventId: filters.eventId === "ALL" ? undefined : filters.eventId,
         festivalId:
           filters.festivalId === "ALL" ? undefined : filters.festivalId,
