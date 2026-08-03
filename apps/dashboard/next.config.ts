@@ -25,9 +25,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  generateBuildId: async () => {
-    return `build-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  },
   transpilePackages: [
     "@gameverse/ui",
     "@gameverse/auth",
