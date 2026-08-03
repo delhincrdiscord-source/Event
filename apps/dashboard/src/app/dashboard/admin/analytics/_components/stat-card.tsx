@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@gameverse/ui/card";
 import { Skeleton } from "@gameverse/ui/skeleton";
 import type { LucideIcon } from "lucide-react";
-import type { ElementType } from "react";
+import type { ElementType, ComponentType } from "react";
 
 interface StatCardProps {
   title: string;
   value: string | number;
   description?: string;
-  icon?: LucideIcon | ElementType;
+  icon?: LucideIcon | ElementType | ComponentType<{ className?: string }>;
   trend?: {
     value: number;
     isPositive: boolean;
