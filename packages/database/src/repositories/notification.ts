@@ -248,6 +248,16 @@ export class NotificationRepository {
     })) as unknown as Notification;
   }
 
+  async markAsUnread(id: string): Promise<Notification> {
+    return (await prisma.notification.update({
+      where: { id },
+      data: {
+        isRead: false,
+        readAt: null,
+      },
+    })) as unknown as Notification;
+  }
+
   async markAllAsRead(userId: string): Promise<{ count: number }> {
     return prisma.notification.updateMany({
       where: {
