@@ -49,14 +49,14 @@ const nextConfig: NextConfig = {
     "@radix-ui/react-tooltip",
     "cmdk",
   ],
+  // Prevent webpack from bundling pino and its worker-thread dependencies.
+  // When bundled, the worker.js path gets mangled and causes MODULE_NOT_FOUND at runtime.
+  serverExternalPackages: ["pino", "pino-pretty", "thread-stream"],
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",
     },
-    workerThreads: false,
-    cpus: 1,
   },
-  outputFileTracingRoot: require("path").join(__dirname, "../../"),
   eslint: {
     ignoreDuringBuilds: true,
   },
