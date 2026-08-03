@@ -2,7 +2,7 @@
   "name": "gameverse",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --force",
     "dev": "turbo dev",
     "dev:landing": "turbo dev --filter=@gameverse/landing",
     "dev:dashboard": "turbo dev --filter=@gameverse/dashboard",

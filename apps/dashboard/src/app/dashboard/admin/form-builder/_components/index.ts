@@ -1,4 +1,4 @@
-export { FormPreview } from "./form-preview";
-export { FieldProperties } from "./field-properties";
-export { FieldPalette } from "./field-palette";
-export { FormCanvas } from "./form-canvas";
+export { default as FormPreview } from "./form-preview";
+export { default as FieldProperties } from "./field-properties";
+export { default as FieldPalette } from "./field-palette";
+export { default as FormCanvas } from "./form-canvas";

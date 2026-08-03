@@ -26,7 +26,7 @@ const participantNavItems: NavItem[] = [
   { label: "Badges", href: "/dashboard/badges", emoji: "🎖️" },
   { label: "Rewards", href: "/dashboard/rewards", emoji: "🎁" },
   { label: "Hall of Fame", href: "/dashboard/hall-of-fame", emoji: "👑" },
-  { label: "Notifications", href: "/dashboard/notifications", emoji: "🔔" },
+  { label: "Notifications", href: "/dashboard/my-notifications", emoji: "🔔" },
   { label: "Profile", href: "/dashboard/settings/profile", emoji: "👤" },
 ];
 
