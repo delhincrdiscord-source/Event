@@ -53,7 +53,10 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: "2mb",
     },
+    workerThreads: false,
+    cpus: 1,
   },
+  outputFileTracingRoot: require("path").join(__dirname, "../../"),
   eslint: {
     ignoreDuringBuilds: true,
   },
