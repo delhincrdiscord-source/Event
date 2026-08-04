@@ -22,6 +22,7 @@ import {
   FormInput,
   Shield,
   Users,
+  CheckSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -41,6 +42,7 @@ const adminNavItems: NavItem[] = [
   { label: "Events", href: "/dashboard/admin/events", icon: CalendarDays },
   { label: "Registrations", href: "/dashboard/admin/registrations", icon: Ticket },
   { label: "Participants", href: "/dashboard/admin/participants", icon: Users },
+  { label: "Attendance", href: "/dashboard/admin/attendance", icon: CheckSquare },
   { label: "Announcements", href: "/dashboard/admin/announcements", icon: Megaphone },
   { label: "Categories", href: "/dashboard/admin/categories", icon: FolderOpen },
   { label: "Gallery", href: "/dashboard/admin/gallery", icon: Image },
