@@ -1,4 +1,4 @@
-export const DeleteFestivalDialog = () => null;
-export const ArchiveFestivalDialog = () => null;
-export const RestoreFestivalDialog = () => null;
-export const DuplicateFestivalDialog = () => null;
+export * from "./archive-dialog";
+export * from "./delete-dialog";
+export * from "./duplicate-dialog";
+export * from "./restore-dialog";
