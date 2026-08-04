@@ -513,3 +513,135 @@ export async function deleteRegistration(id: string): Promise<ActionResult<unkno
     return handleActionError(error);
   }
 }
+
+export async function bulkDeleteRegistrations(
+  data: BulkRegistrationActionInput
+): Promise<ActionResult<unknown>> {
+  try {
+    const session = await requireAdmin();
+    await checkMutationRateLimit(session.userId);
+
+    const validatedData = bulkRegistrationActionSchema.parse(data);
+    for (const id of validatedData.registrationIds) {
+      await registrationRepository.delete(id);
+    }
+    await writeAuditLog({
+      actorId: session.userId,
+      action: "REGISTRATION_BULK_DELETE",
+      targetEntity: "Registration",
+      changesJson: { registrationIds: validatedData.registrationIds },
+    });
+    return ok(null);
+  } catch (error) {
+    return handleActionError(error);
+  }
+}
+
+export async function getRegistrationAnalytics(): Promise<ActionResult<unknown>> {
+  try {
+    await requireAdmin();
+
+    const stats = await registrationRepository.getStats();
+    const statsAny = stats as any;
+
+    // Today's registrations
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const todayResult = await registrationRepository.findMany({
+      dateFrom: today.toISOString(),
+      dateTo: tomorrow.toISOString(),
+      page: 1,
+      perPage: 1,
+    });
+    const todayCount = (todayResult as any).total ?? 0;
+
+    // Yesterday for growth
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayResult = await registrationRepository.findMany({
+      dateFrom: yesterday.toISOString(),
+      dateTo: today.toISOString(),
+      page: 1,
+      perPage: 1,
+    });
+    const yesterdayCount = (yesterdayResult as any).total ?? 0;
+
+    const growthRate = yesterdayCount > 0
+      ? Math.round(((todayCount - yesterdayCount) / yesterdayCount) * 100)
+      : todayCount > 0 ? 100 : 0;
+
+    const approvalRate = statsAny.totalRegistrations > 0
+      ? Math.round((statsAny.approvedRegistrations / statsAny.totalRegistrations) * 100)
+      : 0;
+
+    return ok({
+      todayRegistrations: todayCount,
+      yesterdayRegistrations: yesterdayCount,
+      dailyGrowth: growthRate,
+      approvalRate,
+      totalRegistrations: statsAny.totalRegistrations,
+      pendingRegistrations: statsAny.pendingRegistrations,
+    });
+  } catch (error) {
+    return handleActionError(error);
+  }
+}
+
+export async function exportAllRegistrations(filters?: {
+  status?: string;
+  festivalId?: string;
+  eventId?: string;
+}): Promise<ActionResult<unknown>> {
+  try {
+    await requireAdmin();
+
+    const result = await registrationRepository.findMany({
+      status: filters?.status as any,
+      festivalId: filters?.festivalId,
+      eventId: filters?.eventId,
+      page: 1,
+      perPage: 10000,
+      sortBy: "registeredAt",
+      sortOrder: "desc",
+    });
+
+    const registrations = (result as any).registrations ?? [];
+
+    const headers = [
+      "Pass Number",
+      "Display Name",
+      "Username",
+      "Email",
+      "Discord Username",
+      "Festival",
+      "Event",
+      "Status",
+      "Attendance",
+      "Registered At",
+      "Approved At",
+      "Checked In At",
+    ];
+
+    const rows = registrations.map((r: any) => ({
+      passNumber: r.passNumber ?? "",
+      displayName: r.user?.globalName ?? r.user?.username ?? "",
+      username: r.user?.username ?? "",
+      email: r.user?.email ?? "",
+      discordUsername: r.user?.discordAccount?.nickname ?? r.user?.username ?? "",
+      festival: r.festival?.name ?? "",
+      event: r.event?.title ?? "",
+      status: r.status ?? "",
+      attendance: r.checkedInAt ? "Checked In" : "Not Checked In",
+      registeredAt: r.registeredAt ? new Date(r.registeredAt).toISOString() : "",
+      approvedAt: r.approvedAt ? new Date(r.approvedAt).toISOString() : "",
+      checkedInAt: r.checkedInAt ? new Date(r.checkedInAt).toISOString() : "",
+    }));
+
+    return ok({ headers, rows });
+  } catch (error) {
+    return handleActionError(error);
+  }
+}

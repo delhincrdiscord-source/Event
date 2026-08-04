@@ -21,6 +21,7 @@ import {
   FolderOpen,
   FormInput,
   Shield,
+  Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -39,6 +40,7 @@ const adminNavItems: NavItem[] = [
   { label: "Festivals", href: "/dashboard/admin/festivals", icon: Calendar },
   { label: "Events", href: "/dashboard/admin/events", icon: CalendarDays },
   { label: "Registrations", href: "/dashboard/admin/registrations", icon: Ticket },
+  { label: "Participants", href: "/dashboard/admin/participants", icon: Users },
   { label: "Announcements", href: "/dashboard/admin/announcements", icon: Megaphone },
   { label: "Categories", href: "/dashboard/admin/categories", icon: FolderOpen },
   { label: "Gallery", href: "/dashboard/admin/gallery", icon: Image },
